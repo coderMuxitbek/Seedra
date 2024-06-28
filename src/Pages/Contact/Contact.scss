@@ -1,0 +1,179 @@
+.contactCont {
+    width: 100%;
+    border-radius: 24px;
+    background-color: #EAF1EB;
+    display: flex;
+    justify-content: space-between;
+    padding: 32px 40px 32px 59px;
+    margin-top: 40px;
+    margin-bottom: 112px;
+}
+
+.mainMail {
+    display: flex;
+    flex-direction: column;
+    gap: 165px;
+
+    &-mention {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        &-main {
+            font-weight: 600;
+            font-size: clamp(2.125rem, 1.765rem + 1.65vw, 3rem);
+            color: #1F2533;
+        }
+
+        &-text{
+            width: 249px;
+            font-weight: 300;
+            font-size: 16px;
+            color: #1F2533;
+        }
+    }
+
+    &-phoneAndMailBox{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        & div{
+            display: flex;
+            align-items: center;
+            gap: 22px;
+
+            & img{
+                width: 56px;
+            }
+
+            & p{
+                font-weight: 600;
+                font-size: clamp(0.875rem, 0.618rem + 1.18vw, 1.5rem);
+                color: #70737C;
+            }
+        }
+    }
+}
+
+.mainRequests {
+    background-color: white;
+    border-radius: 29px;
+    padding: 26px 32px 25px 33px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    &-inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        &-nameBox {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+
+            &-label {
+                font-weight: 400;
+                font-size: 14px;
+                color: #70737C;
+            }
+
+            &-input {
+                padding: 14px 0px 14px 24px;
+            }
+
+            & input {
+                height: 56px;
+                padding: 14px 0px 14px 24px;
+                border: 1px solid #EFEFEF;
+                border-radius: 4px;
+                font-weight: 300;
+                font-size: 16px;
+                color: #70737C;
+            }
+        
+            & input:hover{
+                box-shadow: 0px 1px 6px 0px #00000052;
+            }
+        
+            & input:focus{
+                outline: none;
+            }
+        }
+
+        &-messageBox {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+
+            &-label {
+                font-weight: 400;
+                font-size: 14px;
+                color: #70737C;
+            }
+
+            &-input {
+                padding-left: 24px;
+                padding-top: 14px;
+                padding-bottom: 91px;
+            }
+
+            & input {
+                height: 56px;
+                padding: 14px 0px 14px 24px;
+                border: 1px solid #EFEFEF;
+                border-radius: 4px;
+                font-weight: 300;
+                font-size: 16px;
+                color: #70737C;
+            }
+        
+            & input:hover{
+                box-shadow: 0px 1px 6px 0px #00000052;
+            }
+        
+            & input:focus{
+                outline: none;
+            }
+        }
+    }
+
+    &-confirmBox {
+        display: flex;
+        gap: 20px;
+
+        &-button {
+            background-color: #359740;
+            border-radius: 8px;
+            border: none;
+            color: white;
+            padding: 11px 31px 11px 31px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        &-privacyText {
+            width: 222px;
+            font-weight: 400;
+            font-size: 14px;
+            color: #70737C;
+            line-height: 25px;
+        }
+    }
+}
+
+@media (max-width: 600px){
+    .contactCont{
+        display: flex;
+        flex-direction: column;
+        padding: 22px 30px 22px 39px;
+    }
+
+    .mainMail{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+}

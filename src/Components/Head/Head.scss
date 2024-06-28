@@ -1,0 +1,213 @@
+.headCont {
+    width: 100%;
+    height: 455px;
+    background-color: #EAF1EB;
+    margin-top: 32px;
+    border-radius: 24px;
+    position: relative;
+    z-index: 2;
+    padding: 48px 0px 52px 76px;
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+
+    &-twoMainText {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+
+        &-h2 {
+            font-size: 48px;
+            color: #1F2533;
+            font-weight: 600;
+        }
+
+        &-h3 {
+            font-size: 16px;
+            color: #1F2533;
+            font-weight: 300;
+            line-height: 28px;
+            flex-wrap: wrap;
+        }
+    }
+
+
+    &-pricesAndAddCartBox {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        &-priceBox {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            &-fireImg {
+                width: 46px;
+            }
+
+            &-newPrice {
+                font-weight: 600;
+                font-size: 42px;
+                color: #1F2533;
+            }
+
+
+            &-oldPrice {
+                font-weight: 600;
+                font-size: 22px;
+                color: #70737C;
+                text-decoration: line-through;
+            }
+        }
+
+        &-buttonBox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            & button {
+                width: 153px;
+                height: 51px;
+                border-radius: 8px;
+                padding: 11px, 33px, 11px, 33px;
+                border: none;
+            }
+
+            &-add {
+                background-color: #359740;
+                color: white;
+                cursor: pointer;
+            }
+
+            &-add:hover{
+                background-color: #2BB159;
+            }
+
+            &-add:focus{
+                background-color: #4FA083;
+            }
+
+            &-discover {
+                background-color: #FFFFFF;
+                color: #359740;
+            }
+        }
+    }
+}
+
+.seedPacket {
+    height: 349px;
+    position: absolute;
+    top: 67px;
+    left: 800px;
+    z-index: 1;
+}
+
+.greenLives {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    z-index: 0;
+}
+
+.freshLeaves {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+
+.freshIsolated {
+    position: absolute;
+    right: 240px;
+    top: 290px;
+}
+
+.inHead {
+    width: 1110px;
+    height: 104px;
+    background-color: #FFE62E17;
+    border-radius: 12px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &-sell {
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    &-sprout {
+        font-size: 16px;
+        font-weight: 500;
+    }
+}
+
+@media(max-width: 600px) {
+    .headCont {
+        width: 345px;
+        height: auto;
+        padding: 0px 22px 50px 14px;
+        margin-bottom: 200px;
+        background-color: blue;
+
+        &-texts{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            &-priceBox{
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+        }
+        
+
+      
+    }
+
+    .headCont h3 {
+        font-size: clamp(0.875rem, 0.75rem + 0.33vw, 1rem);
+    }
+
+    .headCont h2 {
+        font-size: clamp(1.75rem, 0.857rem + 2.86vw, 3rem);
+    }
+    
+
+    .headImages{
+        display: none;
+    }
+
+    .headImagesMedia{
+        width: 100%;
+    }
+
+    .mediaGroupLeaves{
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+    }
+
+    .mediaBottomLeaf{
+        position: absolute;
+        top: 156px;
+        left: 13px;
+    }
+
+    .mediaSeedPacket{
+        position: absolute;
+        width: 178px;
+        top: 41px;
+        left: 20%;
+    }
+
+    .inHead{
+        margin-top: 700px;
+    }
+}

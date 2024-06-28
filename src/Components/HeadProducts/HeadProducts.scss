@@ -1,0 +1,118 @@
+.ourProductsBiggestCont {
+    width: 1110px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 58px;
+
+    &-mainNavBtns {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        &-text {
+            font-weight: 600;
+            font-size: 36px;
+            color: #1F2533;
+        }
+    }
+}
+
+
+.ourProdsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    &-productBox {
+        width: 350px;
+        height: 512px;
+        padding: 28px;
+        border-radius: 8px;
+        border: 2px solid #EFEFEF;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        &-image {
+            width: 294px;
+            height: 294px;
+        }
+
+        &-threeWork {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+
+            &-starBox {
+                display: flex;
+                gap: 13px;
+                align-items: center;
+
+            }
+
+            &-addCartBox {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+
+                &-seeds {
+                    font-weight: 500;
+                    font-size: 16px;
+                    color: #1F2533;
+                    line-height: 25px;
+                }
+
+                &-cartWork {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    &-price {
+                        font-weight: 600;
+                        font-size: 28px;
+                        color: #1F2533;
+                    }
+
+                    &-cartImg {
+                        width: 24px;
+                        height: 24px;
+                        padding: 12px;
+                        box-sizing: content-box;
+                        border: 1px solid #EFEFEF;
+                        border-radius: 8px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ourProductsTwoCont {
+    display: flex;
+}
+
+.ourProdsActiveBox {
+    gap: 31px;
+}
+
+.prodoActive {
+    width: 255px;
+    height: 425px;
+    padding: 24px 33px;
+    transition: all 1s ease;
+}
+
+.imageActive {
+    width: 188px;
+    height: 188px;
+    transition: all 1s ease;
+}
+
+@media (max-width: 580px) {
+    .ourProdsContainer {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}

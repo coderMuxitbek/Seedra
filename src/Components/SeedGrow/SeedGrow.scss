@@ -1,0 +1,23 @@
+.seedGrow {
+
+    &-textBox {
+        display: flex;
+        flex-direction: column;
+        gap: 31px;
+
+        &-mainText {
+            width: 500px;
+            font-weight: 600;
+            font-size: 36px;
+            color: #1F2533;
+        }
+
+        &-explanation {
+            width: 521px;
+            font-weight: 300;
+            font-size: 16px;
+            color: #1F2533;
+            line-height: 28px;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+.CartContainer {
+    width: 730px;
+
+    &-cartBox {
+        width: 700px;
+        display: flex;
+        justify-content: space-between;
+
+        &-your {
+            font-weight: 600;
+            font-size: 36px;
+            color: #1F2533;
+        }
+
+        &-items {
+            font-weight: 600;
+            font-size: 24px;
+            color: #70737C;
+        }
+    }
+
+    &-line {
+        border-bottom: 1px solid #EFEFEF;
+    }
+}

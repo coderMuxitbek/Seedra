@@ -1,0 +1,91 @@
+.siteLogoLogin{
+    width: 97px;
+    position: absolute;
+    top: -50px;
+}
+
+.loginCont{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    margin: 0 auto;
+    top: 90px;
+    width: 400px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.signInCont{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    text-align: left;
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding: 25px;
+    background-color: white;
+}
+
+.createAccountMainBtn{
+    width: 100%;
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding: 5px;
+    height: 30px;
+    background-color: white;
+    cursor: pointer;
+}
+
+.signInBoxWithBtn{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.emailBeforeInput{
+    font-size: 12px;
+}
+
+.signInput, .signContinue{
+    width: 350px;
+    padding: 5px;
+    height: 30px;
+}
+
+.signContinue{
+    background-color: rgb(255, 220, 0);
+    border: none;
+    border-radius: 10px;
+}
+
+.signInMention{
+    font-size: 32px;
+}
+
+.inputBoxSignIn{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.loginLineBetween{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lineLogin{
+    width: 38%;
+    height: 4px;
+    border-top: 1px solid rgb(205, 205, 205);
+}
+
+.LoginPrivacyMention, .newToSeedra{
+    font-size: 12px;
+}
+
+.newToSeedra{
+    color: grey;
+}

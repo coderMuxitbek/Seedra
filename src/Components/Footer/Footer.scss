@@ -1,0 +1,68 @@
+.BigFooter {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 700px;
+}
+
+.footerNavBox {
+    width: 1110px;
+    padding-bottom: 33px;
+    padding-top: 41px;
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    justify-content: center;
+    border-bottom: 1px solid #359740;
+    position: relative;
+    margin-top: 500px;
+    margin: 0 auto;
+}
+
+.footerNav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 64px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #70737C;
+
+    a {
+        color: #70737C;
+    }
+}
+
+.greenMediaBox {
+    position: absolute;
+    left: 0;
+    bottom: -39px;
+}
+
+.aboutRights {
+    position: absolute;
+    right: 0;
+    bottom: -39px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #70737C;
+}
+
+@media (max-width: 600px) {
+    .footerNavBox {
+        width: 350px;
+        display: flex;
+        align-items: flex-start;
+        padding-top: 70px;
+    }
+
+    .footerNav {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .siteLogoFooter {
+        position: absolute;
+        top: 20px;
+    }
+}

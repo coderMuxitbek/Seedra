@@ -1,0 +1,74 @@
+.personalInfoCheckoutYourCartBig {
+    width: 350px;
+    height: 474px;
+    border: 1px solid #EFEFEF;
+    border-radius: 12px;
+    background-color: #FFFFFF;
+    padding: 24px 23px 39px 31px;
+    display: flex;
+    flex-direction: column;
+    gap: 39px;
+}
+
+.personalInfoCheckoutYourCart {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    &-firstMention {
+        font-weight: 700;
+        font-size: 18px;
+        color: #1F2533;
+    }
+
+    &-chosens {
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        overflow: hidden;
+        overflow-y: scroll;
+
+        &-chosen {
+            display: flex;
+            flex-direction: column;
+            gap: 9px;
+            border-bottom: 1px solid #EFEFEF;
+            padding-bottom: 9px;
+
+            &-text {
+                width: 268px;
+                font-weight: 400;
+                font-size: 14px;
+                color: #70737C;
+                line-height: 24.95px;
+            }
+
+            &-price {
+                font-weight: 500;
+                font-size: 18px;
+                color: #1F2533;
+            }
+        }
+
+
+    }
+
+    &-totals {
+        display: flex;
+
+        justify-content: space-between;
+
+        &-mention {
+            font-weight: 400;
+            font-size: 14px;
+            color: #70737C;
+        }
+
+        &-price {
+            font-weight: 500;
+            font-size: 18px;
+            color: #1F2533;
+        }
+    }
+}

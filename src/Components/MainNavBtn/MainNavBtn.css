@@ -1,0 +1,21 @@
+.MainNavBtn {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.productChooseCont {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5px;
+    padding: 22px 26px;
+    border: 2px solid #EFEFEF;
+    border-radius: 8px;
+    outline: none;
+}
+
+.productChooseCont:focus {
+    border: 1px solid #359740;
+}

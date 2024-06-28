@@ -1,0 +1,125 @@
+.orderSummaryBox {
+    width: 350px;
+    height: 484px;
+    border: 1px solid #EFEFEF;
+    border-radius: 12px;
+    padding: 24px 30px 31px 34px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+}
+
+.orderingsums {
+    display: flex;
+    flex-direction: column;
+    gap: 29px;
+}
+
+.orderSummary {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    &-orderText {
+        font-size: 18px;
+        font-weight: 700;
+        color: #1F2533;
+    }
+
+    &-qtyPriceBox {
+        display: flex;
+        justify-content: space-between;
+
+        &-qty {
+            font-size: 14px;
+            font-weight: 400;
+            color: #70737C;
+        }
+
+        &-price {
+            font-weight: 500;
+            font-size: 18px;
+            color: #1F2533;
+        }
+    }
+}
+
+.deliveryAndPromo {
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+    border-bottom: 1px solid #EFEFEF;
+    padding-bottom: 35px;
+
+    &-selectDelivery {
+        width: 286px;
+        height: 63px;
+        border-radius: 71px;
+        border: 1px solid #EFEFEF;
+        padding: 0px 0px 0px 26px;
+
+        &-option{
+            height: 50px;
+        }
+    }
+
+    &-promoBox {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+
+        &-promo {
+            font-weight: 400;
+            font-size: 14px;
+            color: #70737C;
+        }
+
+        &-inpo {
+            width: 288px;
+            height: 56px;
+            border: 1px solid #EFEFEF;
+            padding: 0px 0px 0px 24px;
+
+            font-weight: 300;
+            font-size: 16px;
+            color: #70737C;
+        }
+
+        &-inpo:focus {
+            outline: none;
+        }
+    }
+}
+
+.sumTotalsContinue {
+    display: flex;
+    flex-direction: column;
+    gap: 29px;
+
+    &-summaryTotals {
+        display: flex;
+        justify-content: space-between;
+
+        &-text {
+            font-weight: 400;
+            font-size: 14px;
+            color: #70737C;
+        }
+
+        &-price {
+            font-weight: 500;
+            font-size: 18px;
+            color: #1F2533;
+        }
+    }
+
+    &-btn {
+        padding: 11px 33px;
+        background-color: #359740;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        font-weight: 500;
+        font-size: 16px;
+    }
+}

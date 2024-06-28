@@ -1,0 +1,220 @@
+.ourBlogHeadNav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ourBlogHeadBlogs {
+    display: flex;
+    gap: 30px;
+}
+
+.plants {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &-herbBlog {
+        width: 730px;
+        height: 300px;
+        border-radius: 12px;
+        padding: 30px;
+        padding-right: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        background-color: #EAF1EB;
+        position: relative;
+
+        &-timeText {
+            width: 401px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            &-timeBox {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                &-image {
+                    width: 24px;
+                }
+
+                &-time {
+                    font-weight: 400;
+                    font-size: 14px;
+                    color: #70737C;
+                }
+            }
+
+            &-textBox {
+
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+
+                &-how {
+                    width: 372px;
+                    font-weight: 600;
+                    font-size: 24px;
+                    color: #1F2533;
+                }
+
+                &-in {
+                    width: 401px;
+                    font-weight: 400;
+                    font-size: 14px;
+                    color: #70737C;
+                }
+            }
+        }
+
+        &-btn {
+            width: 106px;
+            height: 51px;
+            background-color: #FFFFFF;
+            border: 1px solid #EFEFEF;
+            border-radius: 8px;
+            padding: 11px, 33px, 11px, 33px;
+            color: #359740;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        &-herbImg {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 294px;
+            height: 300px;
+        }
+
+
+    }
+
+    &-twoBox {
+        display: flex;
+        gap: 30px;
+
+        &-redBox {
+            position: relative;
+            padding: 30px 34px 109px 30px;
+            background-color: #EFF2F8;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+
+            &-timeText {
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+
+                &-timeBox {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+
+                    &-time {
+                        font-weight: 400;
+                        font-size: 14px;
+                        color: #70737C;
+                    }
+                }
+
+                &-text {
+                    font-weight: 600;
+                    font-size: 24px;
+                    color: #1F2533;
+                    width: 286px;
+                }
+            }
+
+            &-btn {
+                width: 106px;
+                height: 51px;
+                background-color: #FFFFFF;
+                padding: 11px, 33px, 11px, 33px;
+                border-radius: 8px;
+                border: 1px solid #EFEFEF;
+                color: #359740;
+                font-weight: 500;
+                font-size: 16px;
+            }
+
+            &-strawberryImg {
+                width: 238px;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+
+        }
+    }
+}
+
+.girlStrawberryCarrying {
+    position: relative;
+    padding: 24px 20px 366px 24px;
+    background-color: #EFF2F8;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    &-timeText {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        &-timeBox {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+
+            &-image {
+                width: 24px;
+            }
+
+            &-time {
+                font-weight: 400;
+                font-size: 14px;
+                color: #70737C;
+            }
+        }
+
+        &-textBox {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+
+            &-how {
+                font-weight: 600;
+                font-size: 24px;
+                color: #1F2533;
+            }
+
+            &-in {
+                font-weight: 400;
+                font-size: 14px;
+                color: #70737C;
+            }
+        }
+    }
+
+    &-btn {
+        width: 106px;
+        height: 51px;
+        padding: 11px, 33px, 11px, 33px;
+        border: 1px solid #EFEFEF;
+        background-color: #FFFFFF;
+        border-radius: 8px;
+        color: #359740;
+        font-weight: 500;
+        font-size: 16px;
+    }
+    &-imgOfGirl{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}

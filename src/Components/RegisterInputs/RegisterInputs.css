@@ -1,0 +1,19 @@
+#mentionCharacters {
+    font-weight: 400;
+}
+
+.registerInput p {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.registerInput input,
+.registerContinueBtn {
+    width: 350px;
+    padding: 5px;
+    height: 30px;
+}
+
+.error-text{
+    color: red;
+}

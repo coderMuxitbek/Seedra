@@ -1,0 +1,121 @@
+.productBox {
+    display: flex;
+    align-items: center;
+
+    &-imgBox {
+
+        display: flex;
+
+        &-img {
+            width: 445px;
+            height: 445px;
+        }
+    }
+
+    &-packsBox {
+
+        &-mainTextBox {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+
+
+            &-mainText {
+                font-weight: 600;
+                font-size: 24px;
+                color: #1F2533;
+            }
+
+            &-btns {
+                display: flex;
+                gap: 11px;
+
+
+
+                &-available {
+                    width: 147px;
+                    height: 40px;
+                    border-radius: 119px;
+                    background-color: #35974014;
+                    border: 1px solid;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 8px;
+                }
+
+                &-typePlant {
+                    width: 176px;
+                    height: 40px;
+                    border: 1px solid;
+                    border-radius: 119px;
+                    background-color: #EFEFEF;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 8px;
+                }
+            }
+        }
+
+
+    }
+}
+
+.allPacks{
+
+    &-sizeQty{
+        display: flex;
+        justify-content: space-between;
+
+        &-size{
+            display: flex;
+            gap: 9px;
+
+
+        }
+
+        &-btnBox{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid;
+            border-radius: 11px;
+            background-color: #EFEFEF;
+            padding: 5px 15px; 
+
+            &-plus{
+                font-size: 26px;
+            }
+
+            &-minus{
+                font-size: 26px;
+            }
+
+            &-number{
+                border-radius: 6px;
+                background-color: #35974014;
+                padding: 5px 10px;
+            }
+        }
+    }
+    
+    &-numberOfPacks{
+        display: flex;
+        flex-direction: column;
+
+        &-packDiv{
+            padding: 14px 17px 14px 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #4FA083;
+            border-radius: 8px;
+
+            &-numberDiv{
+                display: flex;
+                gap: 13px;
+            }
+        }
+    }
+}

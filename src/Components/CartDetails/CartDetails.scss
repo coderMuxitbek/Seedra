@@ -1,0 +1,135 @@
+.myCart {
+    width: 730px;
+    display: flex;
+    gap: 30px;
+    margin-top: 32px;
+}
+
+.myCartQtyLine {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #EFEFEF;
+
+    &-myCartQty {
+        display: flex;
+
+        justify-content: space-between;
+
+        &-text {
+            font-weight: 600;
+            font-size: 36px;
+            color: #1F2533;
+        }
+
+        &-qty {
+            font-weight: 600;
+            font-size: 24px;
+            color: #70737C;
+        }
+    }
+}
+
+.productDetailTitles {
+    font-size: 14px;
+    font-weight: 400;
+    color: #70737C;
+    display: flex;
+    gap: 276px;
+    margin-top: 24px;
+
+
+    &-amountPriceTotal {
+        display: flex;
+        gap: 70px;
+
+        &-priceTotal {
+            display: flex;
+            gap: 58px;
+        }
+    }
+}
+
+.lineCart {
+    width: 100%;
+    border-bottom: 1px solid #EFEFEF;
+}
+
+
+.chosenProduct {
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    border-bottom: 1px solid #EFEFEF;
+    padding-bottom: 24px;
+    padding-top: 31px;
+
+
+    &-withImage {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        &-img {
+            border-radius: 12px;
+            border: 1px solid #EFEFEF;
+            width: 64px;
+            height: 63px;
+        }
+
+        &-text {
+            width: 268px;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 24.95px;
+            color: #1F2533;
+        }
+    }
+
+    &-addMoreBtnsBox {
+        display: flex;
+        align-items: center;
+        gap: 29px;
+
+        &-addBtn {
+            width: 104px;
+            height: 44px;
+            display: flex;
+            background-color: lightblue;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            border-radius: 15px;
+
+            &-plus {
+                background-color: darkcyan;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                border: none;
+            }
+
+            &-minus {
+                background-color: darkcyan;
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                border: none;
+            }
+        }
+
+        &-calculatingsBox {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+
+            &-price,
+            &-total {
+                font-weight: 500;
+                font-size: 18px;
+                color: #1F2533;
+            }
+        }
+    }
+}
