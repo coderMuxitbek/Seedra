@@ -139,22 +139,13 @@
   ],
   "cart": [
     {
+      "id": "320494",
       "image": "https://mobileimages.lowes.com/productimages/1bd5a4f3-2cb8-4dad-99bc-03cf9d9811da/16863459.jpg",
       "text": "Seedra Ferry-Morse Seeds for Planting Indoor and Outdoor",
       "price": "65",
       "typeOfPlant": "FLOWERS",
       "typeOfElement": "ROSE",
-      "id": "320494",
-      "qty": 4
-    },
-    {
-      "image": "https://happyherbals.online/cdn/shop/products/hairpackpouch_1400x.png?v=1677666442",
-      "text": "SEEDRA Spinach Seeds for Indoor and Outdoor Planting",
-      "price": "70",
-      "typeOfPlant": "HERBS",
-      "typeOfElement": "ANGELICA",
-      "id": "091438835",
-      "qty": 5
+      "qty": 1
     }
   ],
   "tokens": [],

@@ -19,3 +19,8 @@
 .productChooseCont:focus {
     border: 1px solid #359740;
 }
+
+
+@media (max-width: 580px) {
+  
+}

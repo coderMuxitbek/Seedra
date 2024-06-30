@@ -22,19 +22,8 @@ const Head = () => {
     return (
         <>
 
-            <Swiper
-                spaceBetween={30}
-                centeredSlides={true}
-                autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                }}
-              
-                
-                modules={[Autoplay, Pagination, Navigation]}
-                className="mySwiper"
-            >
-                <SwiperSlide className="headCont">
+            <Swiper spaceBetween={30} centeredSlides={true} autoplay={{ delay: 2500, disableOnInteraction: false }} modules={[Autoplay, Pagination, Navigation]} className="mySwiper" >
+                {/* <SwiperSlide className="headCont">
                     <div className="headCont-twoMainText">
                         <h2 className='headCont-twoMainText-h2'>SEEDRA Basil Seeds for <br /> Indoor and Outdoor Planting</h2>
                         <h3 className='headCont-twoMainText-h3'>Be sure of our quality - the freshest batches of this season. Non-GMO,<br /> Heirloom - our seeds were tested and have the best germination ratings. <br /> Your easy growing experience is our guarantee</h3>
@@ -58,9 +47,16 @@ const Head = () => {
                             <button className='headCont-pricesAndAddCartBox-buttonBox-discover'>Discover</button>
                         </div>
                     </div>
-                </SwiperSlide>
-
+                </SwiperSlide> */}
                 <SwiperSlide className="headCont">
+                    <img className='MediaGroupLeaves' src={MediaGroupLeaves} alt="" />
+                    <img className='SeedPacket' src={SeedPacket} alt="" />
+                    <div className="headCont-priceBox">
+                        <img className='headCont-priceBox-fireImg' src={Fire} alt="" />
+                        <p className='headCont-priceBox-newPrice'>$12.56</p>
+                        <p className='headCont-priceBox-oldPrice'>$15.56</p>
+                    </div>
+
                     <div className="headCont-twoMainText">
                         <h2 className='headCont-twoMainText-h2'>SEEDRA Basil Seeds for <br /> Indoor and Outdoor Planting</h2>
                         <h3 className='headCont-twoMainText-h3'>Be sure of our quality - the freshest batches of this season. Non-GMO,<br /> Heirloom - our seeds were tested and have the best germination ratings. <br /> Your easy growing experience is our guarantee</h3>
@@ -84,119 +80,13 @@ const Head = () => {
                             <button className='headCont-pricesAndAddCartBox-buttonBox-discover'>Discover</button>
                         </div>
                     </div>
-                </SwiperSlide>
 
-                <SwiperSlide className="headCont">
-                    <div className="headCont-twoMainText">
-                        <h2 className='headCont-twoMainText-h2'>SEEDRA Basil Seeds for <br /> Indoor and Outdoor Planting</h2>
-                        <h3 className='headCont-twoMainText-h3'>Be sure of our quality - the freshest batches of this season. Non-GMO,<br /> Heirloom - our seeds were tested and have the best germination ratings. <br /> Your easy growing experience is our guarantee</h3>
-                    </div>
-
-                    <div className="headImages">
-                        <img className='seedPacket' src={SeedPacket} alt="" />
-                        <img src={GreenLives} alt="" className="greenLives" />
-                        <img src={FreshLeaves} alt="" className="freshLeaves" />
-                        <img src={FreshIsolated} alt="" className="freshIsolated" />
-                    </div>
-
-                    <div className="headCont-pricesAndAddCartBox">
-                        <div className="headCont-pricesAndAddCartBox-priceBox">
-                            <img className='headCont-pricesAndAddCartBox-priceBox-fireImg' src={Fire} alt="" />
-                            <h3 className='headCont-pricesAndAddCartBox-priceBox-newPrice'>$12.56</h3>
-                            <h3 className='headCont-pricesAndAddCartBox-priceBox-oldPrice'>$15.56</h3>
-                        </div>
-                        <div className="headCont-pricesAndAddCartBox-buttonBox">
-                            <button onClick={() => navigate("/cart")} className='headCont-pricesAndAddCartBox-buttonBox-add'>Add to card</button>
-                            <button className='headCont-pricesAndAddCartBox-buttonBox-discover'>Discover</button>
-                        </div>
+                    <div className="headCont-mediaButtons">
+                        <button onClick={() => navigate("/cart")} className='headCont-mediaButtons-add'>Add to card</button>
+                        <button className='headCont-mediaButtons-discover'>Discover</button>
                     </div>
                 </SwiperSlide>
-
-                <SwiperSlide className="headCont">
-                    <div className="headCont-twoMainText">
-                        <h2 className='headCont-twoMainText-h2'>SEEDRA Basil Seeds for <br /> Indoor and Outdoor Planting</h2>
-                        <h3 className='headCont-twoMainText-h3'>Be sure of our quality - the freshest batches of this season. Non-GMO,<br /> Heirloom - our seeds were tested and have the best germination ratings. <br /> Your easy growing experience is our guarantee</h3>
-                    </div>
-
-                    <div className="headImages">
-                        <img className='seedPacket' src={SeedPacket} alt="" />
-                        <img src={GreenLives} alt="" className="greenLives" />
-                        <img src={FreshLeaves} alt="" className="freshLeaves" />
-                        <img src={FreshIsolated} alt="" className="freshIsolated" />
-                    </div>
-
-                    <div className="headCont-pricesAndAddCartBox">
-                        <div className="headCont-pricesAndAddCartBox-priceBox">
-                            <img className='headCont-pricesAndAddCartBox-priceBox-fireImg' src={Fire} alt="" />
-                            <h3 className='headCont-pricesAndAddCartBox-priceBox-newPrice'>$12.56</h3>
-                            <h3 className='headCont-pricesAndAddCartBox-priceBox-oldPrice'>$15.56</h3>
-                        </div>
-                        <div className="headCont-pricesAndAddCartBox-buttonBox">
-                            <button onClick={() => navigate("/cart")} className='headCont-pricesAndAddCartBox-buttonBox-add'>Add to card</button>
-                            <button className='headCont-pricesAndAddCartBox-buttonBox-discover'>Discover</button>
-                        </div>
-                    </div>
-                </SwiperSlide>
-
-                <SwiperSlide className="headCont">
-                    <div className="headCont-twoMainText">
-                        <h2 className='headCont-twoMainText-h2'>SEEDRA Basil Seeds for <br /> Indoor and Outdoor Planting</h2>
-                        <h3 className='headCont-twoMainText-h3'>Be sure of our quality - the freshest batches of this season. Non-GMO,<br /> Heirloom - our seeds were tested and have the best germination ratings. <br /> Your easy growing experience is our guarantee</h3>
-                    </div>
-
-                    <div className="headImages">
-                        <img className='seedPacket' src={SeedPacket} alt="" />
-                        <img src={GreenLives} alt="" className="greenLives" />
-                        <img src={FreshLeaves} alt="" className="freshLeaves" />
-                        <img src={FreshIsolated} alt="" className="freshIsolated" />
-                    </div>
-
-                    <div className="headCont-pricesAndAddCartBox">
-                        <div className="headCont-pricesAndAddCartBox-priceBox">
-                            <img className='headCont-pricesAndAddCartBox-priceBox-fireImg' src={Fire} alt="" />
-                            <h3 className='headCont-pricesAndAddCartBox-priceBox-newPrice'>$12.56</h3>
-                            <h3 className='headCont-pricesAndAddCartBox-priceBox-oldPrice'>$15.56</h3>
-                        </div>
-                        <div className="headCont-pricesAndAddCartBox-buttonBox">
-                            <button className='headCont-pricesAndAddCartBox-buttonBox-add'>Add to card</button>
-                            <button className='headCont-pricesAndAddCartBox-buttonBox-discover'>Discover</button>
-                        </div>
-                    </div>
-                </SwiperSlide>
-
             </Swiper>
-            {/* <div className="headCont"> */}
-
-
-                {/* media  */}
-                {/* <div className="headImagesMedia">
-                    <img className='mediaSeedPacket' src={SeedPacket} alt="" />
-                    <img className='mediaGroupLeaves' src={MediaGroupLeaves} alt="" />
-                    <img className='mediaBottomLeaf' src={MediaBottomLeaf} alt="" />
-                    <img className='mediaBiggerLeaf' src={MediaBiggerLeaf} alt="" />
-                    <img className='mediaMiddleLeaf' src={MediaMiddleLeaf} alt="" />
-                    <img className='mediaUpperLeaf' src={MediaUpperLeaf} alt="" />
-                </div> */}
-                {/* 
-                <div className="headCont-texts">
-                    <div className="headCont-texts-priceBox">
-                        <div className="headCont-texts-priceBox-fireBox">
-                            <img className='headCont-texts-priceBox-fireImg' src={Fire} alt="" />
-                            <h3 className='headCont-texts-priceBox-newPrice'>$12.56</h3>
-                        </div>
-                        <h3 className='headCont-texts-priceBox-oldPrice'>$15.56</h3>
-                    </div>
-
-                    <h2 className='headCont-twoMainText-h2'>SEEDRA Basil Seeds for <br /> Indoor and Outdoor Planting</h2>
-                    <h3 className='headCont-twoMainText-h3'>Be sure of our quality - the freshest batches of this season. Non-GMO, Heirloom - our seeds were tested and have the best germination ratings. Your easy growing experience is our guarantee</h3>
-
-                    <div className="headCont-texts-buttonBox">
-                        <button onClick={() => navigate("/cart")} className='headCont-texts-buttonBox-add'>Add to card</button>
-                        <button className='headCont-texts-buttonBox-discover'>Discover</button>
-                    </div>
-                </div> */}
-
-            {/* </div> */}
 
             <div className="inHead">
                 <p className="inHead-sell">We sell seeds</p>

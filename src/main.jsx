@@ -15,8 +15,9 @@ const EachProduct = lazy(() => import('./Pages/EachProduct/EachProduct.jsx'));
 const OurBlog = lazy(() => import('./Pages/OurBlog/OurBlog.jsx'));
 const AboutSeedra = lazy(() => import('./Pages/AboutSeedra/AboutSeedra.jsx'));
 const CartCheckout = lazy(() => import('./Pages/CartCheckout/CartCheckout.jsx'));
-const MyProfile = lazy(()=> import('./Pages/MyProfile/MyProfile.jsx'));
-const Contact = lazy(()=> import('./Pages/Contact/Contact.jsx'));
+const MyProfile = lazy(() => import('./Pages/MyProfile/MyProfile.jsx'));
+const Contact = lazy(() => import('./Pages/Contact/Contact.jsx'));
+const AllSeeds = lazy(() => import('./Pages/AllSeeds/AllSeeds.jsx'));
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,11 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HeadPage />,
+      },
+
+      {
+        path: "/allSeeds",
+        element: <AllSeeds />
       },
 
       {
@@ -53,11 +59,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/myProfile",
-        element: <MyProfile/>
+        element: <MyProfile />
       },
       {
         path: "/contact",
-        element: <Contact/>
+        element: <Contact />
       }
     ]
   },

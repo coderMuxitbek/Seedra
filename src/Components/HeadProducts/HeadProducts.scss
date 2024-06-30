@@ -18,11 +18,11 @@
     }
 }
 
-
 .ourProdsContainer {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+    width: 100%;
 
     &-productBox {
         width: 350px;
@@ -32,11 +32,11 @@
         border: 2px solid #EFEFEF;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         gap: 24px;
 
         &-image {
-            width: 294px;
-            height: 294px;
+            width: 100%;
         }
 
         &-threeWork {
@@ -111,8 +111,5 @@
 }
 
 @media (max-width: 580px) {
-    .ourProdsContainer {
-        display: flex;
-        flex-wrap: wrap;
-    }
+  
 }

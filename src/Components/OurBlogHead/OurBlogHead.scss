@@ -1,3 +1,13 @@
+@media (max-width: 580px) {
+    .ourBlogs {
+        display: flex;
+        overflow-x: scroll;
+    }
+}
+
+
+
+
 .ourBlogHeadNav {
     display: flex;
     justify-content: space-between;
@@ -212,7 +222,8 @@
         font-weight: 500;
         font-size: 16px;
     }
-    &-imgOfGirl{
+
+    &-imgOfGirl {
         position: absolute;
         bottom: 0;
         right: 0;

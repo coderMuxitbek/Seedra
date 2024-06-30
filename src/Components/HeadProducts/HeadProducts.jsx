@@ -40,42 +40,12 @@ const OurProdsCode = ({ FilterHandler, inputData, filteredData, handleChange, In
                     <p className="ourProductsBiggestCont-mainNavBtns-text">Our products</p>
                     <MainNavBtn FilterHandler={FilterHandler} inputData={inputData} filteredData={filteredData} InputHandler={InputHandler} />
                 </div>
-                <div className={openFilter ? "ourProductsTwoCont ourProdsActiveBox" : "ourProductsTwoCont"}>
-                    <Filter openFilter={openFilter} inputData={inputData} handleChange={handleChange} FilterHandler={FilterHandler}/>
 
-                    <div className="ourProdsContainer">
-                        {filteredData.map((item) => {
-                            return <div onClick={()=> navigate(`/eachProduct/${item.id}`)} key={item.id} className={openFilter ? "ourProdsContainer-productBox prodoActive" : "ourProdsContainer-productBox"}>
-                                <img className={openFilter ? 'ourProdsContainer-productBox-image imageActive' : "ourProdsContainer-productBox-image"} src={item.image} alt="" />
-                                <div className="ourProdsContainer-productBox-threeWork">
-                                    <div className="ourProdsContainer-productBox-threeWork-starBox">
-                                        <div className="ourProdsContainer-productBox-threeWork-starBox-stars">
-                                            <img src={Star} alt="" />
-                                            <img src={Star} alt="" />
-                                            <img src={Star} alt="" />
-                                            <img src={Star} alt="" />
-                                            <img src={Star} alt="" />
-                                            <img src={Star} alt="" />
-                                        </div>
-                                        <p>(135)</p>
-                                    </div>
-
-                                    <div className="ourProdsContainer-productBox-threeWork-addCartBox">
-                                        <p className='ourProdsContainer-productBox-threeWork-addCartBox-seeds'>{item.text}</p>
-                                        <div className="ourProdsContainer-productBox-threeWork-addCartBox-cartWork">
-                                            <p className='ourProdsContainer-productBox-threeWork-addCartBox-cartWork-price'>${item.price}</p>
-                                            {/* <img className='ourProdsContainer-productBox-threeWork-addCartBox-cartWork-cartImg' src={Savat} alt="" /> */}
-                                            <ShoppingCartOutlinedIcon className="shopCartMUI MuiNativeSelect-filled" onClick={() => AddCart(item)} color="success"></ShoppingCartOutlinedIcon>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        })}
-                    </div>
-                </div>
+                
+          
             </div>
 
-            <OurBlogHead/>
+            {/* <OurBlogHead/> */}
             {/* <SeedGrow/> */}
         </>
     )
