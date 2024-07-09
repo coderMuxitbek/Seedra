@@ -8,11 +8,10 @@
 .appCont {
     width: 1110px;
     font-family: lexend;
-    overflow: hidden;
 }
 
 @media (max-width: 600px) {
     .appCont {
-        width: 345px;
+        width: 90vw;
     }
 }

@@ -1,11 +1,25 @@
 import { useNavigate } from 'react-router-dom';
 import '../OrderSummary/OrderSummary.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const OrderSummary = ({ cart, total }) => {
     const navigate = useNavigate();
 
-    const [delivery, setDelivery] = useState(0)
+    const [delivery, setDelivery] = useState(0);
+    const [percent, setPercent]= useState(0);
+
+    useEffect(() => {
+            if (delivery === "shipping") {
+                setPercent(15)
+            }
+            if (delivery === "truck") {
+                setPercent(10)
+            }
+            if (delivery === "air") {
+                setPercent(20)
+            }
+    }, [delivery])
+
 
 
     return (
@@ -20,27 +34,10 @@ const OrderSummary = ({ cart, total }) => {
                 </div>
 
                 <div className="deliveryAndPromo">
-                    <select className='deliveryAndPromo-selectDelivery' name="" id="">
-                        <option onClick={() => {
-                            setDelivery(10)
-                            console.log(delivery);
-                        }} className='deliveryAndPromo-selectDelivery-option' value="truck">
-                            Truck +10%
-                        </option>
-
-                        <option onClick={() => {
-                            setDelivery(15)
-                            console.log(delivery);
-                        }} className='deliveryAndPromo-selectDelivery-option' value="shipping">
-                            Shipping +15%
-                        </option>
-
-                        <option onClick={() => {
-                            setDelivery(20)
-                            console.log(delivery);
-                        }} className='deliveryAndPromo-selectDelivery-option' value="air">
-                            Air +20%
-                        </option>
+                    <select onChange={(e)=> setDelivery(e.target.value)} defaultValue="shipping" className='deliveryAndPromo-selectDelivery' name="" id="">
+                        <option className='deliveryAndPromo-selectDelivery-option' value="truck">Truck +10%</option>
+                        <option className='deliveryAndPromo-selectDelivery-option' value="shipping">Shipping +15%</option>
+                        <option className='deliveryAndPromo-selectDelivery-option' value="air">Air +20%</option>
                     </select>
 
                     <div className="deliveryAndPromo-promoBox">
@@ -53,7 +50,7 @@ const OrderSummary = ({ cart, total }) => {
             <div className="sumTotalsContinue">
                 <div className="sumTotalsContinue-summaryTotals">
                     <p className='sumTotalsContinue-summaryTotals-text'>Total amount</p>
-                    <p className='sumTotalsContinue-summaryTotals-price'></p>
+                    <p className='sumTotalsContinue-summaryTotals-price'>${total / 100 * percent + total}</p>
                 </div>
 
                 <button onClick={() => navigate("/cartCheckout")} className='sumTotalsContinue-btn'>Continue</button>

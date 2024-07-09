@@ -6,6 +6,9 @@
       "price": "75",
       "typeOfPlant": "HERBS",
       "typeOfElement": "ANGELICA",
+      "seedType": "Hybrid",
+      "mainFeatures": "Drought Tolerant",
+      "sunlight": "Full Sun",
       "id": "05695843"
     },
     {
@@ -14,6 +17,9 @@
       "price": "65",
       "typeOfPlant": "FLOWERS",
       "typeOfElement": "ROSE",
+      "seedType": "Open Pollinated",
+      "mainFeatures": "Extended Bloom Time",
+      "sunlight": "Full Sun",
       "id": "320494"
     },
     {
@@ -22,6 +28,9 @@
       "price": "70",
       "typeOfPlant": "HERBS",
       "typeOfElement": "ANGELICA",
+      "seedType": "Hybrid",
+      "mainFeatures": "Attracts Pollinators",
+      "sunlight": "Full Sun",
       "id": "091438835"
     },
     {
@@ -30,6 +39,9 @@
       "price": "52",
       "typeOfPlant": "VEGETABLES",
       "typeOfElement": "CARROTS",
+      "seedType": "Open Pollinated",
+      "mainFeatures": "Air Purification",
+      "sunlight": "Full Sun",
       "id": "828372910"
     },
     {
@@ -38,6 +50,9 @@
       "price": "35",
       "typeOfPlant": "GRAINS",
       "typeOfElement": "WHEAT",
+      "seedType": "Organic",
+      "mainFeatures": "High Germination Rate",
+      "sunlight": "Full Shade",
       "id": "283791"
     },
     {
@@ -46,6 +61,9 @@
       "price": "60",
       "typeOfPlant": "HERBS",
       "typeOfElement": "CALENDULA",
+      "seedType": "Pelleted",
+      "mainFeatures": "Drought Tolerant",
+      "sunlight": "Partial Shade",
       "id": "72613894"
     },
     {
@@ -54,6 +72,9 @@
       "price": "80",
       "typeOfPlant": "HERBS",
       "typeOfElement": "ANGELICA",
+      "seedType": "Pelleted",
+      "mainFeatures": "High Germination Rate",
+      "sunlight": "Full Shade",
       "id": "5167834"
     },
     {
@@ -62,6 +83,9 @@
       "price": "43",
       "typeOfPlant": "FLOWERS",
       "typeOfElement": "TULIPS",
+      "seedType": "Organic",
+      "mainFeatures": "Air Purification",
+      "sunlight": "Full Shade",
       "id": "415253892"
     },
     {
@@ -70,6 +94,9 @@
       "price": "66",
       "typeOfPlant": "HERBS",
       "typeOfElement": "CALENDULA",
+      "seedType": "Pelleted",
+      "mainFeatures": "Attracts Pollinators",
+      "sunlight": "Full Shade",
       "id": "218834904"
     },
     {
@@ -78,6 +105,9 @@
       "price": "58",
       "typeOfPlant": "VEGETABLES",
       "typeOfElement": "POTATOS",
+      "seedType": "Open Pollinated",
+      "mainFeatures": "Extended Bloom Time",
+      "sunlight": "Full Shade",
       "id": "931401458"
     },
     {
@@ -86,6 +116,9 @@
       "price": "68",
       "typeOfPlant": "HERBS",
       "typeOfElement": "ANGELICA",
+      "seedType": "Organic",
+      "mainFeatures": "Drought Tolerant",
+      "sunlight": "Partial Shade",
       "id": "1929030447"
     },
     {
@@ -94,6 +127,9 @@
       "price": "35",
       "typeOfPlant": "GRAINS",
       "typeOfElement": "CORN",
+      "seedType": "Hybrid",
+      "mainFeatures": "Drought Tolerant",
+      "sunlight": "Partial Shade",
       "id": "34245"
     },
     {
@@ -102,6 +138,9 @@
       "price": "52",
       "typeOfPlant": "VEGETABLES",
       "typeOfElement": "CARROTS",
+      "seedType": "Open Pollinated",
+      "mainFeatures": "Extended Bloom Time",
+      "sunlight": "Partial Sun",
       "id": "28284940044"
     },
     {
@@ -110,6 +149,9 @@
       "price": "52",
       "typeOfPlant": "HERBS",
       "typeOfElement": "CALENDULA",
+      "seedType": "Organic",
+      "mainFeatures": "Attracts Pollinators",
+      "sunlight": "Partial Sun",
       "id": "1029474"
     },
     {
@@ -118,6 +160,9 @@
       "price": "88",
       "typeOfPlant": "FLOWERS",
       "typeOfElement": "ROSE",
+      "seedType": "Pelleted",
+      "mainFeatures": "Air Purification",
+      "sunlight": "Partial Sun",
       "id": "120397646"
     },
     {
@@ -126,6 +171,9 @@
       "price": "55",
       "typeOfPlant": "VEGETABLES",
       "typeOfElement": "POTATOES",
+      "seedType": "Organic",
+      "mainFeatures": "High Germination Rate",
+      "sunlight": "Partial Shade",
       "id": "01928337465"
     },
     {
@@ -134,6 +182,9 @@
       "price": "90",
       "typeOfPlant": "FLOWERS",
       "typeOfElement": "TULIPS",
+      "seedType": "Open Pollinated",
+      "mainFeatures": "Drought Tolerant",
+      "sunlight": "Partial Shade",
       "id": "93884161793"
     }
   ],
@@ -145,6 +196,33 @@
       "price": "65",
       "typeOfPlant": "FLOWERS",
       "typeOfElement": "ROSE",
+      "seedType": "Open Pollinated",
+      "mainFeatures": "Extended Bloom Time",
+      "sunlight": "Full Sun",
+      "qty": null
+    },
+    {
+      "id": "283791",
+      "image": "https://5.imimg.com/data5/YY/VM/DB/SELLER-6541824/9000-hybrid-maize-seeds.jpg",
+      "text": "SEEDRA Corn - Bodacious Hybrid Seeds for Indoor and Outdoor Planting",
+      "price": "35",
+      "typeOfPlant": "GRAINS",
+      "typeOfElement": "WHEAT",
+      "seedType": "Organic",
+      "mainFeatures": "High Germination Rate",
+      "sunlight": "Full Shade",
+      "qty": 5
+    },
+    {
+      "id": "320494",
+      "image": "https://mobileimages.lowes.com/productimages/1bd5a4f3-2cb8-4dad-99bc-03cf9d9811da/16863459.jpg",
+      "text": "Seedra Ferry-Morse Seeds for Planting Indoor and Outdoor",
+      "price": "65",
+      "typeOfPlant": "FLOWERS",
+      "typeOfElement": "ROSE",
+      "seedType": "Open Pollinated",
+      "mainFeatures": "Extended Bloom Time",
+      "sunlight": "Full Sun",
       "qty": 1
     }
   ],

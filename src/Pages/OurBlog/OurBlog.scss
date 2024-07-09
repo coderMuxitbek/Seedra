@@ -1,176 +1,523 @@
-.welcomeBlog {
-    border: none;
-    border-radius: 24px;
-    background-color: #EAF1EB;
-    width: 100%;
-    height: 251px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 12px;
-    margin-top: 30px;
-
-    &-TopRightMedia {
-        position: absolute;
-        top: 0;
-        right: 0;
-    }
-
-    &-BottomRightMedia {
-        position: absolute;
-        bottom: 0px;
-        right: 0;
-    }
-
-    &-BottomLeftMedia {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-    }
-
-    &-welcome {
-        font-weight: 600;
-        font-size: 28px;
-        color: #1F2533;
-    }
-
-    &-here {
-        font-weight: 300;
-        font-size: 14px;
-        color: #1F2533;
-    }
-}
-
-.inputSearchBlog {
-    width: 99%;
-    display: flex;
-    align-items: center;
-    height: 53px;
-    border: 1px solid #EFEFEF;
-    border-radius: 71px;
-    padding: 12px 18px 12px 27px;
-    margin-top: 16px;
-
-    &-input {
-        width: 100%;
-        height: 100%;
+@media (max-width: 580px) {
+    .welcomeBlog {
         border: none;
-    }
-
-    &-input:focus {
-        outline: none;
-    }
-}
-
-.inputSearchBlog:hover {
-    box-shadow: 1px 1px 1px 1px #00000052;
-}
-
-.herbalBlog {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    background-color: #EAF1EB;
-    border-radius: 12px;
-    padding: 20px 24px 147px 20px;
-    position: relative;
-    margin-top: 11px;
-
-    &-timeText {
+        border-radius: 24px;
+        background-color: #EAF1EB;
+        width: 100%;
+        height: 251px;
+        position: relative;
         display: flex;
         flex-direction: column;
-        gap: 8px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 12px;
+        margin-top: 30px;
 
-        &-timeBox {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-
-            &-img {
-                width: 24px;
-            }
-
-            &-time {
-                font-weight: 400;
-                font-size: 14px;
-                color: #70737C;
-            }
+        &-TopRightMedia {
+            position: absolute;
+            top: 0;
+            right: 0;
         }
 
-        &-textBox {
+        &-BottomRightMedia {
+            position: absolute;
+            bottom: 0px;
+            right: 0;
+        }
+
+        &-BottomLeftMedia {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+        &-welcome {
+            font-weight: 600;
+            font-size: 28px;
+            color: #1F2533;
+        }
+
+        &-here {
+            font-weight: 300;
+            font-size: 14px;
+            color: #1F2533;
+        }
+    }
+
+    .inputSearchBlog {
+        width: 99%;
+        display: flex;
+        align-items: center;
+        height: 53px;
+        border: 1px solid #EFEFEF;
+        border-radius: 71px;
+        padding: 12px 18px 12px 27px;
+        margin-top: 16px;
+
+        &-input {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        &-input:focus {
+            outline: none;
+        }
+    }
+
+    .inputSearchBlog:hover {
+        box-shadow: 1px 1px 1px 1px #00000052;
+    }
+
+    .herbalBlog {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        background-color: #EAF1EB;
+        border-radius: 12px;
+        padding: 20px 24px 147px 20px;
+        position: relative;
+        margin-top: 11px;
+
+        &-timeText {
             display: flex;
             flex-direction: column;
-            gap: 4px;
+            gap: 8px;
 
-            &-how {
-                font-weight: 700;
-                font-size: 18px;
-                color: #1F2533;
+            &-timeBox {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                &-img {
+                    width: 24px;
+                }
+
+                &-time {
+                    font-weight: 400;
+                    font-size: 14px;
+                    color: #70737C;
+                }
             }
 
-            &-in {
-                font-weight: 400;
-                font-size: 14px;
-                color: #70737C;
+            &-textBox {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+
+                &-how {
+                    font-weight: 700;
+                    font-size: 18px;
+                    color: #1F2533;
+                }
+
+                &-in {
+                    font-weight: 400;
+                    font-size: 14px;
+                    color: #70737C;
+                }
             }
+
+
         }
 
+        &-btn {
+            width: 106px;
+            height: 51px;
+            border-radius: 8px;
+            border: 1px solid #EFEFEF;
+            padding: 11px, 33px, 11px, 33px;
+            background-color: #FFFFFF;
+        }
+
+        &-herbImg {
+            width: 222px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
 
     }
 
-    &-btn {
-        width: 106px;
-        height: 51px;
-        border-radius: 8px;
-        border: 1px solid #EFEFEF;
-        padding: 11px, 33px, 11px, 33px;
-        background-color: #FFFFFF;
-    }
-
-    &-herbImg {
-        width: 222px;
+    .girlImgHerb {
         position: absolute;
         bottom: 0;
         right: 0;
+        width: 157px;
     }
 
+    .strawberryImgHerb {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 238px;
+    }
+
+    .granateImgHerb {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 138px;
+    }
+
+    .tripleImgHerb {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 222px;
+        height: 227px;
+    }
+
+    .blackImgGirl {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 171px;
+    }
+
+    .ourBlogs2 {
+        display: none;
+    }
 }
 
-.girlImgHerb {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 157px;
-}
 
-.strawberryImgHerb{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 238px;
-}
 
-.granateImgHerb{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 138px;
-}
+@media (min-width: 580px) {
 
-.tripleImgHerb{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 222px;
-    height: 227px;
-}
+    .inputSearchBlog {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        height: 64px;
+        border: 1px solid #EFEFEF;
+        border-radius: 71px;
+        margin-top: 19px;
+        padding: 17px 0px 18px 30px;
 
-.blackImgGirl{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 171px;
+
+        &-input {
+            height: 100%;
+            border: none;
+            flex-grow: 5;
+        }
+
+        &-input:focus {
+            outline: none;
+        }
+
+        .filterIconAlt {
+            display: none;
+        }
+    }
+
+    .ourBlogs {
+        margin-top: 33px;
+    }
+
+    .welcomeBlogBig {
+        padding: 64px 230px;
+        background-color: #EAF1EB;
+        position: relative;
+        border-radius: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        justify-content: center;
+        text-align: center;
+
+        &-welcome {
+            font-size: 48px;
+            font-weight: 600;
+            color: #1F2533;
+        }
+
+        &-here {
+            font-size: 16px;
+            font-weight: 300;
+            color: #1F2533;
+        }
+
+        &-left {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        &-leftTop {
+            position: absolute;
+            left: 76px;
+            bottom: 59.25px;
+
+        }
+
+        &-right {
+            position: absolute;
+            right: 0;
+            bottom: 67px;
+        }
+
+        &-rightTop {
+            position: absolute;
+            right: 0;
+            top: 15px;
+        }
+    }
+
+    .welcomeBlog {
+        display: none;
+    }
+
+    .herbalBlog {
+        display: none;
+    }
+
+    .ourBlogs2 {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-top: 30px;
+
+        .twoBlog2 {
+            display: flex;
+            gap: 30px;
+
+
+            &-threeFruit {
+                background-color: #EAF1EB;
+                border-radius: 12px;
+                padding: 30px 299px 30px 30px;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 14px;
+                flex-grow: 4;
+
+                &-timeText {
+                    width: 401px;
+
+                    &-timeBox {
+                        display: flex;
+                        gap: 8px;
+                        align-items: center;
+
+                        &-image {
+                            width: 24px;
+                        }
+
+                        &-text {
+                            font-size: 14px;
+                            color: #70737C;
+                            font-weight: 400;
+                        }
+                    }
+
+                    &-textBox {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 4px;
+
+                        &-how {
+                            width: 372px;
+                            font-weight: 600;
+                            font-size: 24px;
+                            color: #1F2533;
+                        }
+
+                        &-in {
+                            font-weight: 400;
+                            font-size: 14px;
+                            color: #70737C;
+                        }
+                    }
+
+
+                }
+
+                &-btn {
+                    padding: 11px 33px;
+                    font-weight: 500;
+                    font-size: 16px;
+                    color: #359740;
+                    background-color: white;
+                    border-radius: 8px;
+                    border: 1px solid #EFEFEF;
+
+                }
+
+                &-mainImg {
+                    position: absolute;
+                    height: 100%;
+                    right: 0;
+                    top: 0;
+                }
+            }
+
+            &-canolaBox {
+                flex-grow: 1;
+                background-color: #EAF1EB;
+                border-radius: 12px;
+                padding: 30px 34px 109px 30px;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 14px;
+
+                &-timeText {
+                    // width: 401px;
+
+                    &-timeBox {
+                        display: flex;
+                        gap: 8px;
+                        align-items: center;
+
+                        &-image {
+                            width: 24px;
+                        }
+
+                        &-text {
+                            font-size: 14px;
+                            color: #70737C;
+                            font-weight: 400;
+                        }
+                    }
+
+                    &-textBox {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 4px;
+
+                        &-how {
+                            width: 286px;
+                            font-weight: 600;
+                            font-size: 24px;
+                            color: #1F2533;
+                        }
+
+                        &-in {
+                            font-weight: 400;
+                            font-size: 14px;
+                            color: #70737C;
+                        }
+                    }
+
+
+                }
+
+                &-btn {
+                    padding: 11px 33px;
+                    font-weight: 500;
+                    font-size: 16px;
+                    color: #359740;
+                    background-color: white;
+                    border-radius: 8px;
+                    border: 1px solid #EFEFEF;
+
+                }
+
+                &-mainImg {
+                    position: absolute;
+                    width: 130px;
+                    right: 0;
+                    bottom: 0px;
+                }
+            }
+        }
+
+        .threeBlogs {
+            display: flex;
+            gap: 30px;
+
+            &-blogBox {
+                padding: 24px 20px 366px 24px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 14px;
+                border-radius: 12px;
+                position: relative;
+
+                &-timeTextBox {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+
+                    &-timeBox {
+                        display: flex;
+                        gap: 8px;
+
+                        &-image {
+                            width: 24px;
+                        }
+
+                        &-text {
+                            font-size: 14px;
+                            font-weight: 400;
+                            color: #70737C;
+                        }
+                    }
+
+                    &-textBox {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 4px;
+
+                        &-how {
+                            font-size: 24px;
+                            color: #1F2533;
+                            font-weight: 600;
+                        }
+
+                        &-in {
+                            font-size: 14px;
+                            color: #70737C;
+                            font-weight: 400;
+                        }
+                    }
+                }
+
+                &-btn {
+                    padding: 11px 33px;
+                    font-weight: 500;
+                    font-size: 16px;
+                    color: #359740;
+                    background-color: white;
+                    border-radius: 8px;
+                    border: 1px solid #EFEFEF;
+
+                }
+
+                &-BigImage {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0px;
+
+                }
+
+                .BigImageBlack {
+                    height: 410px;
+
+                }
+
+                .BigImageSunglasses {
+                    width: 297px;
+                }
+            }
+
+            &-blogBoxMain1 {
+                background-color: #35974014;
+            }
+
+            &-blogBoxMain2 {
+                background-color: #EFF2F8;
+            }
+
+            &-blogBoxMain3 {
+                background-color: #35974014;
+            }
+        }
+    }
+
 }

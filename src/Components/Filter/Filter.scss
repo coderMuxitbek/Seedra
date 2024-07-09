@@ -1,11 +1,22 @@
 .productFilters {
-    margin-left: -290px;
+    width: 254px;
+
+    &-mention{
+        border-bottom: 1px solid #EFEFEF;
+        padding-bottom: 8px;
+        font-weight: 400;
+        font-size: 14px;
+        color: #1F2533;
+    }
 
     &-seedTypes {
         &-mention {
             width: 100%;
-            border-bottom: 1px solid;
-            padding: 5px 0px;
+            border-bottom: 1px solid #EFEFEF;
+            padding: 14px 0px 12px 0px;
+            font-weight: 500;
+            font-size: 16px;
+            color: #1F2533;
         }
 
         &-options {
@@ -17,6 +28,12 @@
 
             &-optionRadio {
                 padding: 10px 0px;
+
+                &-label{
+                    color: #70737C;
+                    font-weight: 400;
+                    font-size: 14px;
+                }
             }
         }
     }
@@ -29,6 +46,6 @@
 
 .optionsOpen {
     opacity: 1;
-    height: 135px;
+    height: 195px;
     transition: opacity 1s ease, height 1s ease;
 }

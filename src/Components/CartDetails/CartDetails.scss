@@ -1,7 +1,7 @@
 .myCart {
-    width: 730px;
+    width: 1110px;
     display: flex;
-    gap: 30px;
+    justify-content: space-between;
     margin-top: 32px;
 }
 
@@ -14,12 +14,11 @@
 
     &-myCartQty {
         display: flex;
-
         justify-content: space-between;
 
         &-text {
             font-weight: 600;
-            font-size: 36px;
+            font-size: clamp(1.375rem, 0.556rem + 2.26vw, 2.25rem);
             color: #1F2533;
         }
 
@@ -55,7 +54,6 @@
     width: 100%;
     border-bottom: 1px solid #EFEFEF;
 }
-
 
 .chosenProduct {
     display: flex;
@@ -93,29 +91,31 @@
         gap: 29px;
 
         &-addBtn {
-            width: 104px;
-            height: 44px;
             display: flex;
-            background-color: lightblue;
             align-items: center;
-            justify-content: center;
-            gap: 15px;
-            border-radius: 15px;
+            gap: 6px;
+            border: 1px solid #EFEFEF;
+            border-radius: 11px;
+            padding: 2px 14px;
+            color: #359740;
+
+            &-qty {
+                width: 32px;
+                height: 32px;
+                background-color: #35974014;
+                padding: 3px 12px;
+                border-radius: 6px;
+                font-size: 18px;
+            }
 
             &-plus {
-                background-color: darkcyan;
-                width: 30px;
-                height: 30px;
-                border-radius: 50%;
-                border: none;
+                font-size: 30px;
+                cursor: pointer;
             }
 
             &-minus {
-                background-color: darkcyan;
-                width: 30px;
-                height: 30px;
-                border-radius: 50%;
-                border: none;
+                font-size: 30px;
+                cursor: pointer;
             }
         }
 
@@ -131,5 +131,182 @@
                 color: #1F2533;
             }
         }
+    }
+}
+
+@media (min-width: 580px) {
+    .chosensQtyMedia {
+        display: none;
+    }
+}
+
+@media (max-width: 580px) {
+    .chosenItemsBigBox {
+        display: none;
+    }
+
+    .chosensQtyMedia {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 23px;
+    }
+
+    .myCart {
+        width: 345px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .chosenCartNavMedia {
+        padding: 30px 0px 22px 0px;
+        border-bottom: 1px solid #EFEFEF;
+        width: 345px;
+        display: flex;
+        justify-content: space-between;
+
+        &-mention {
+            font-weight: 600;
+            font-size: 22px;
+            color: #1F2533;
+        }
+
+        &-number {
+            font-weight: 500;
+            font-size: 16px;
+            color: #70737C;
+        }
+    }
+
+    .chosenProducts {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .chosenProductMedia {
+        width: 345px;
+        border: 1px solid #EFEFEF;
+        border-radius: 12px;
+        padding: 15px 21px 21px 21px;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+
+
+        &-crossDelete {
+            width: 22px;
+            margin: 0 auto;
+        }
+
+        &-withoutCross {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            &-productDescription {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                &-text {
+                    width: 200px;
+                    font-weight: 400;
+                    font-size: 14px;
+                    color: #1F2533;
+                    text-align: left;
+                }
+
+                &-image {
+                    width: 64px;
+                }
+
+            }
+
+            &-productQtyBox {
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+
+                &-amountBig {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    &-mention {
+                        font-weight: 400;
+                        font-size: 14px;
+                        color: #70737C;
+                    }
+
+                    &-amountBox {
+                        display: flex;
+                        align-items: center;
+                        gap: 6px;
+                        border: 1px solid #EFEFEF;
+                        border-radius: 11px;
+                        padding: 2px 14px;
+                        color: #359740;
+
+                        &-minus {
+                            font-size: 30px;
+                        }
+
+                        &-qty {
+                            width: 32px;
+                            height: 32px;
+                            background-color: #35974014;
+                            padding: 3px 12px;
+                            border-radius: 6px;
+                            font-size: 18px;
+                        }
+
+                        &-plus {
+                            font-size: 30px;
+                        }
+                    }
+                }
+
+                &-priceBox {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    &-mention {
+                        font-weight: 400;
+                        font-size: 14px;
+                        color: #70737C;
+                    }
+
+                    &-price {
+                        font-size: 18px;
+                        font-weight: 500;
+                        color: #1F2533;
+                    }
+                }
+
+                &-totalBox {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    &-mention {
+                        font-weight: 400;
+                        font-size: 14px;
+                        color: #70737C;
+                    }
+
+                    &-total {
+                        font-size: 18px;
+                        font-weight: 500;
+                        color: #1F2533;
+                    }
+                }
+            }
+        }
+
+
+
     }
 }

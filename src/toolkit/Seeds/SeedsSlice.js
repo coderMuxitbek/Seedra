@@ -3,6 +3,11 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     originalData: [],
     filteredData: [],
+    userDetails: {
+        name: "",
+        email: "",
+        message: "",
+    },
 }
 
 const SeedsSlice = createSlice({
@@ -17,9 +22,13 @@ const SeedsSlice = createSlice({
         updateFilteredData: (state, { payload }) => {
             state.filteredData = payload;
         },
+
+        saveUserData: (state, { payload }) => {
+            state.userDetails = payload;
+        }
     },
 });
 
 
 export default SeedsSlice.reducer;
-export const { saveDataToState, updateFilteredData } = SeedsSlice.actions;
+export const { saveDataToState, updateFilteredData, saveUserData } = SeedsSlice.actions;

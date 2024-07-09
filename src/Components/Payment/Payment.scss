@@ -1,10 +1,10 @@
-.paymentCont{
+.paymentCont {
     width: 446px;
-    background-color: white;
     margin: 0 auto;
+    margin-top: 22px;
 }
 
-.paymentChecksAdditional{
+.paymentChecksAdditional {
     display: flex;
     flex-direction: column;
     gap: 27.92px;
@@ -70,11 +70,11 @@
         color: #70737C;
     }
 
-    & input:hover{
+    & input:hover {
         box-shadow: 0px 1px 6px 0px #00000052;
     }
 
-    & input:focus{
+    & input:focus {
         outline: none;
     }
 
@@ -87,15 +87,15 @@
     &-cardNumber {
         display: flex;
         flex-direction: column;
-        gap: 2px;       
+        gap: 2px;
     }
 
-    &-timeline{
+    &-timeline {
         display: flex;
         justify-content: space-between;
         gap: 19px;
 
-        & div{
+        & div {
             display: flex;
             flex-direction: column;
             gap: 2px;
@@ -104,24 +104,24 @@
     }
 }
 
-.totalAmountPayment{
+.totalAmountPayment {
     display: flex;
     justify-content: space-between;
 
-    &-text{
+    &-text {
         font-weight: 400;
         font-size: 14px;
         color: #70737C;
     }
 
-    &-price{
+    &-price {
         font-weight: 500;
         font-size: 18px;
         color: #1F2533;
     }
 }
 
-.paymentLastBtn{
+.paymentLastBtn {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -134,7 +134,7 @@
     font-weight: 500;
     padding: 11px 0px 11px 21px;
 
-    &-lastSteps{
+    &-lastSteps {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -142,9 +142,56 @@
     }
 }
 
-.totalsPayment{
+.totalsPayment {
     display: flex;
     flex-direction: column;
     gap: 32px;
     margin-top: 28px;
+}
+
+#errorPayment{
+    color: red;
+}
+
+@media (max-width: 580px) {
+    .paymentCont {
+        width: 345px;
+
+    }
+
+    .paymentNav {
+        margin-bottom: 22px;
+
+        &-backBox {
+
+            &-mention {
+                font-size: 22px;
+                font-weight: 600;
+            }
+        }
+
+        &-lights {
+            display: none;
+        }
+    }
+
+    .paymentChecksAdditional {
+
+
+
+        .cardNumberTimeline {
+            width: 345px;
+
+            &-timeline {
+                width: 345px;
+                display: flex;
+
+                & div {
+                    width: 45%;
+                }
+
+
+            }
+        }
+    }
 }

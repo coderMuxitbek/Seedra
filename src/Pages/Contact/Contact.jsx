@@ -2,8 +2,40 @@ import '../Contact/Contact.scss';
 import PhoneIcon from '../../assets/Images/contactImages/Frame 187.png';
 import MailIcon from '../../assets/Images/contactImages/Frame 188.png';
 import { motion } from 'framer-motion'
+import { useState } from 'react';
+import { saveUserData } from '../../toolkit/Seeds/SeedsSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const Contact = () => {
+    const navigate = useNavigate()
+    const dispatch = useDispatch();
+
+    const [userDetails, setUserDetails] = useState({
+        name: '',
+        email: '',
+        message: '',
+    })
+
+    const GetUserDetails = (e) => {
+        const { name, value } = e.target;
+
+        setUserDetails((prev) => {
+            return { ...prev, [name]: value }
+        })
+    };
+
+    const SendRequest = () => {
+        if (userDetails.name && userDetails.email && userDetails.message) {
+            localStorage.setItem("userName", (userDetails.name))
+            localStorage.setItem("userEmail", (userDetails.email))
+            localStorage.setItem("userMessage", (userDetails.message))
+        }
+
+        navigate("/myProfile/account")
+    }
+
+
     return (
         <div className='contactCont'>
             <div className="mainMail">
@@ -29,23 +61,23 @@ const Contact = () => {
                 <div className="mainRequests-inputs">
                     <div className="mainRequests-inputs-nameBox">
                         <label className='mainRequests-inputs-nameBox-label' htmlFor="">Name</label>
-                        <input className='mainRequests-inputs-nameBox-input' type="text" placeholder='Your name' />
+                        <input onChange={GetUserDetails} name='name' className='mainRequests-inputs-nameBox-input' type="text" placeholder='Your name' />
                     </div>
 
                     <div className="mainRequests-inputs-nameBox">
                         <label className='mainRequests-inputs-nameBox-label' htmlFor="">E-mail</label>
-                        <input className='mainRequests-inputs-nameBox-input' type="text" placeholder='Your email' />
+                        <input onChange={GetUserDetails} name='email' className='mainRequests-inputs-nameBox-input' type="text" placeholder='Your email' />
                     </div>
 
                     <div className="mainRequests-inputs-messageBox">
                         <label className='mainRequests-inputs-messageBox-label' htmlFor="">Message</label>
-                        <input className='mainRequests-inputs-messageBox-input' type="text" placeholder='Your message' />
+                        <input onChange={GetUserDetails} name='message' className='mainRequests-inputs-messageBox-input' type="text" placeholder='Your message' />
                     </div>
                 </div>
 
                 <div className="mainRequests-confirmBox">
-                    <motion.button whileHover={{ scale: 1.1 }} whileTap={{ y: -2 }} transition={{ duration: 1, times: [0] }}   className='mainRequests-confirmBox-button'>Send request</motion.button>
-                    <p className='mainRequests-confirmBox-privacyText'>By sending request you agree to out Pivacy&Policy</p>
+                    <motion.button onClick={() => SendRequest()} whileHover={{ scale: 1 }} whileTap={{ y: -1 }} transition={{ duration: 0.1, times: [0] }} className='mainRequests-confirmBox-button'>Send request</motion.button>
+                    <p className='mainRequests-confirmBox-privacyText'>By sending request you agree to our Pivacy&Policy</p>
                 </div>
             </div>
         </div>

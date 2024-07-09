@@ -12,13 +12,14 @@ import OurBlogHead from "../OurBlogHead/OurBlogHead";
 import SeedGrow from "../SeedGrow/SeedGrow";
 
 const OurProdsCode = ({ FilterHandler, inputData, filteredData, handleChange, InputHandler, openFilter }) => {
+    const [noResults, setNoResults] = useState("")
     const navigate = useNavigate();
     const [cartItem, setCartItem] = useState([]);
     console.log(cartItem);
 
     const AddCart = async (product) => {
         const existing = cartItem.find((item) => item.id === product.id)
-
+        
         if (existing) {
             console.log("exist");
             await axios.put(`http://localhost:3000/cart/${existing.id}`, { ...existing, qty: existing.qty + 1 });
@@ -33,19 +34,54 @@ const OurProdsCode = ({ FilterHandler, inputData, filteredData, handleChange, In
         }
     }
 
+    // if (filteredData.length === 0) {
+    //     setNoResults("No results found")
+    // }
+
     return (
         <>
             <div className="ourProductsBiggestCont">
                 <div className="ourProductsBiggestCont-mainNavBtns">
                     <p className="ourProductsBiggestCont-mainNavBtns-text">Our products</p>
-                    <MainNavBtn FilterHandler={FilterHandler} inputData={inputData} filteredData={filteredData} InputHandler={InputHandler} />
+                    <div className="ourProductsBiggestCont-mainNavBtns-mainNavBtnBoxHead">
+                        <MainNavBtn FilterHandler={FilterHandler} inputData={inputData} filteredData={filteredData} InputHandler={InputHandler} />
+                    </div>
+
+                    <button className="ourProductsBiggestCont-mainNavBtns-viewAll">View all (22)</button>
                 </div>
 
-                
-          
+                <div className="ourHeadProducts">
+                    {filteredData.map((item, i) => {
+                        return <div className="productBox">
+                            <img className="productBox-image" src={item.image} alt="" />
+                            <div className="productBox-description">
+                                <div className="productBox-description-textStars">
+                                    <div className="productBox-description-textStars-starsbox">
+                                        <div className="productBox-description-textStars-starsbox-starImages">
+                                            <img className="productBox-description-textStars-starsbox-starImages-img" src={Star} alt="" />
+                                            <img className="productBox-description-textStars-starsbox-starImages-img" src={Star} alt="" />
+                                            <img className="productBox-description-textStars-starsbox-starImages-img" src={Star} alt="" />
+                                            <img className="productBox-description-textStars-starsbox-starImages-img" src={Star} alt="" />
+                                            <img className="productBox-description-textStars-starsbox-starImages-img" src={Star} alt="" />
+                                        </div>
+                                        <p className="productBox-description-textStars-starsbox-likes">(125)</p>
+                                    </div>
+
+                                    <p className="productBox-description-textStars-text">{item.text}</p>
+                                </div>
+                                <div className="productBox-description-addCartBox">
+                                    <p className="productBox-description-addCartBox-price">${item.price}</p>
+                                    <p className="productBox-description-addCartBox-cartImg"><ShoppingCartOutlinedIcon sx={{ color: "#359740" }}></ShoppingCartOutlinedIcon></p>
+                                </div>
+                            </div>
+
+                        </div>
+                    })}
+                </div>
+
             </div>
 
-            {/* <OurBlogHead/> */}
+            <OurBlogHead />
             {/* <SeedGrow/> */}
         </>
     )

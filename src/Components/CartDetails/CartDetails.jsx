@@ -6,64 +6,9 @@ import TwoSeedPacket from '../../assets/Images/image 1 (1).png';
 import OrderSummary from '../OrderSummary/OrderSummary';
 import axios from 'axios';
 import HeadProducts from '../HeadProducts/HeadProducts';
+import Cross from '../../assets/Images/Frame 98.png';
 
-const CartDetails = ({ cart, total }) => {
-    const [cartItem, setCartItem] = useState([])
-    // console.log(cartItem);
-
-    // const fetchItem = async () => {
-    //     const { data } = await axios.get("http://localhost:3000/cart")
-    //     setCartItem(data)
-    //     console.log(data);
-    // }
-
-    // useEffect(()=> {
-    //     fetchItem()
-    // }, [])
-
-    // const incrProductCount = (prod) => {
-    //     const newItem = cartItem.map((item) =>
-    //         item.id === prod.id ? { ...item, qty: item.qty + 1 } : item
-    //     );
-    //     setCartItem(newItem);
-    // };
-
-
-    const AddCart = async (product) => {
-        const existing = cartItem.find((item) => item.id === product.id)
-
-        if (existing) {
-            console.log("exist");
-            await axios.put(`http://localhost:3000/cart/${existing.id}`, { ...existing, qty: existing.qty + 1 });
-            const newItem = cartItem.map((item) => item.id === product.id ? { ...item, qty: item.qty + 1 } : item)
-            setCartItem(newItem)
-        } else {
-            console.log("not exist");
-            await axios.post("http://localhost:3000/cart", { ...product, qty: 1 });
-            setCartItem((prev) => {
-                return [...prev, { ...product, qty: 1 }]
-            })
-        }
-    }
-
-    const RemoveItem = async (product) => {
-        const existing = cartItem.find((item) => item.id === product.id)
-
-        if (existing === 1) {
-            console.log("exist");
-            await axios.delete(`http://localhost:3000/cart/${existing.id}`, { existing });
-            setCartItem((prev) => {
-                return prev.filter((item) => item.id !== product.id)
-            })
-        } else {
-            console.log("not exist");
-            await axios.delete(`http://localhost:3000/cart/${existing}`, { ...existing, qty: existing.qty - 1 });
-            setCartItem((prev) => {
-                return prev.map((item) =>
-                    item.id === existing.id ? { ...item, qty: item.qty - 1 } : item)
-            })
-        }
-    }
+const CartDetails = ({ cart, total, AddCart, RemoveItem }) => {
 
     return (
         <div className='myCart'>
@@ -97,14 +42,58 @@ const CartDetails = ({ cart, total }) => {
 
                             <div className="chosenProduct-addMoreBtnsBox">
                                 <div className="chosenProduct-addMoreBtnsBox-addBtn">
-                                    <button onClick={() => RemoveItem(prod)} className='chosenProduct-addMoreBtnsBox-addBtn-minus'>-</button>
+                                    <span onClick={() => RemoveItem(prod)} className='chosenProduct-addMoreBtnsBox-addBtn-minus'>-</span>
                                     <p className='chosenProduct-addMoreBtnsBox-addBtn-qty'>{prod.qty}</p>
-                                    <button onClick={() => AddCart(prod)} className='chosenProduct-addMoreBtnsBox-addBtn-plus'>+</button>
+                                    <span onClick={() => AddCart(prod)} className='chosenProduct-addMoreBtnsBox-addBtn-plus'>+</span>
                                 </div>
 
                                 <div className="chosenProduct-addMoreBtnsBox-calculatingsBox">
                                     <p className='chosenProduct-addMoreBtnsBox-calculatingsBox-price'>${prod.price}</p>
                                     <p className="chosenProduct-addMoreBtnsBox-calculatingsBox-total">${prod.price * prod.qty}</p>
+                                </div>
+                            </div>
+                        </div>
+                    })}
+                </div>
+            </div>
+
+            <div className="chosensQtyMedia">
+                <div className="chosenCartNavMedia">
+                    <p className='chosenCartNavMedia-mention'>Your cart</p>
+                    <p className='chosenCartNavMedia-number'>{cart.length} items</p>
+                </div>
+
+                <div className="chosenProducts">
+                    {cart.map((prod, i) => {
+                        return <div key={i} className="chosenProductMedia">
+                            <img className='chosenProductMedia-crossDelete' src={Cross} alt="" />
+                            <div className="chosenProductMedia-withoutCross">
+                                <div className="chosenProductMedia-withoutCross-productDescription">
+                                    <p className='chosenProductMedia-withoutCross-productDescription-text'>{prod.text}</p>
+                                    <img className='chosenProductMedia-withoutCross-productDescription-image' src={prod.image} alt="" />
+                                </div>
+
+                                <div className="chosenProductMedia-withoutCross-productQtyBox">
+
+                                    <div className="chosenProductMedia-withoutCross-productQtyBox-amountBig">
+                                        <p className='chosenProductMedia-withoutCross-productQtyBox-amountBig-mention'>Amount</p>
+                                        <div className="chosenProductMedia-withoutCross-productQtyBox-amountBig-amountBox">
+                                            <span onClick={() => RemoveItem(prod)} className='chosenProductMedia-withoutCross-productQtyBox-amountBig-amountBox-minus'>-</span>
+                                            <p className='chosenProductMedia-withoutCross-productQtyBox-amountBig-amountBox-qty'>{prod.qty}</p>
+                                            <span style={{cursor: "pointer"}} onClick={() => AddCart(prod)} className='chosenProductMedia-withoutCross-productQtyBox-amountBig-amountBox-plus'>+</span>
+                                        </div>
+                                    </div>
+
+
+                                    <div className="chosenProductMedia-withoutCross-productQtyBox-priceBox">
+                                        <p className='chosenProductMedia-withoutCross-productQtyBox-priceBox-mention'>Price</p>
+                                        <p className='chosenProductMedia-withoutCross-productQtyBox-priceBox-price'>${prod.price}</p>
+                                    </div>
+
+                                    <div className="chosenProductMedia-withoutCross-productQtyBox-totalBox">
+                                        <p className='chosenProductMedia-withoutCross-productQtyBox-totalBox-mention'>Total</p>
+                                        <p className='chosenProductMedia-withoutCross-productQtyBox-totalBox-total'>${prod.price * prod.qty}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

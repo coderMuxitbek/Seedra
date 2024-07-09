@@ -1,9 +1,9 @@
 .productBox {
     display: flex;
     align-items: center;
+    flex-direction: row;
 
     &-imgBox {
-
         display: flex;
 
         &-img {
@@ -30,13 +30,12 @@
                 display: flex;
                 gap: 11px;
 
-
-
                 &-available {
                     width: 147px;
                     height: 40px;
                     border-radius: 119px;
                     background-color: #35974014;
+                    color: #4FA083;
                     border: 1px solid;
                     display: flex;
                     align-items: center;
@@ -47,7 +46,7 @@
                 &-typePlant {
                     width: 176px;
                     height: 40px;
-                    border: 1px solid;
+                    border: 1px solid #EFEFEF;
                     border-radius: 119px;
                     background-color: #EFEFEF;
                     display: flex;
@@ -58,53 +57,53 @@
             }
         }
 
-
     }
 }
 
-.allPacks{
+.allPacks {
 
-    &-sizeQty{
+    &-sizeQty {
         display: flex;
         justify-content: space-between;
 
-        &-size{
+        &-size {
             display: flex;
             gap: 9px;
 
 
         }
 
-        &-btnBox{
+        &-btnBox {
             display: flex;
             align-items: center;
             gap: 8px;
             border: 1px solid;
             border-radius: 11px;
             background-color: #EFEFEF;
-            padding: 5px 15px; 
+            padding: 5px 15px;
 
-            &-plus{
+            &-plus {
                 font-size: 26px;
             }
 
-            &-minus{
+            &-minus {
                 font-size: 26px;
             }
 
-            &-number{
+            &-number {
                 border-radius: 6px;
                 background-color: #35974014;
                 padding: 5px 10px;
             }
         }
     }
-    
-    &-numberOfPacks{
+
+    &-numberOfPacks {
         display: flex;
         flex-direction: column;
+        gap: 8px;
 
-        &-packDiv{
+        &-packDiv {
             padding: 14px 17px 14px 12px;
             display: flex;
             justify-content: space-between;
@@ -112,9 +111,14 @@
             border: 1px solid #4FA083;
             border-radius: 8px;
 
-            &-numberDiv{
+            &-numberDiv {
                 display: flex;
                 gap: 13px;
+
+                &-img{
+                    width: 18px;
+                    color: green;
+                }
             }
         }
     }

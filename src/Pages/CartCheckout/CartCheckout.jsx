@@ -20,8 +20,7 @@ const CartCheckout = () => {
 
     useEffect(() => {
         GetData()
-    }, [cart])
-
+    }, [])
 
     useEffect(() => {
         let total = 0;
@@ -33,6 +32,38 @@ const CartCheckout = () => {
         setTotal(total)
     }, [cart])
 
+    const [personCheck, setPersonCheck] = useState({
+        name: "",
+        phone: "",
+        address: "",
+        city: "",
+        country: "",
+    });
+
+    const PersonOnchange = (e) => {
+        const { name, value } = e.target;
+
+        setPersonCheck((prev) => {
+            return { ...prev, [name]: value }
+        })
+    }
+
+    // useEffect(()=> {
+
+    // }, []);
+
+    const ContinueBtn = () => {
+        localStorage.setItem("userName", (personCheck.name))
+        localStorage.setItem("userPhone", (personCheck.phone))
+        localStorage.setItem("userAddress", (personCheck.address))
+        localStorage.setItem("userCity", (personCheck.city))
+        localStorage.setItem("userCountry", (personCheck.country))
+
+        navigate("/payment")
+    }
+
+
+
     return (
         <div className='cartCheckoutCont'>
             <div className='cartCheckoutComp1'>
@@ -40,7 +71,7 @@ const CartCheckout = () => {
                     <div className="personalInfoCont">
                         <div className="personCheckNavBox">
                             <div className="personCheckNavBox-westIconBox">
-                                <WestIcon onClick={() => navigate("/")} class='personCheckNavBox-westIconBox-westIcon'></WestIcon>
+                                <WestIcon onClick={() => navigate("/cart")} class='personCheckNavBox-westIconBox-westIcon'></WestIcon>
                                 <p className='personCheckNavBox-westIconBox-checkoutMention'>Checkout</p>
                             </div>
 
@@ -50,14 +81,15 @@ const CartCheckout = () => {
                             </div>
                         </div>
 
-                        <CheckoutPersonal />
+                        <CheckoutPersonal PersonOnchange={PersonOnchange} />
                         {/* <Payment /> */}
                     </div>
-
-                    <YourCart cart={cart} total={total} />
+                    <div className="checkoutYourCartBox">
+                        <YourCart cart={cart} total={total} />
+                    </div>
                 </div>
 
-                <button onClick={() => navigate("/payment")} className='checkoutContinuingBtn'>Continue</button>
+                <button onClick={ContinueBtn} className='checkoutContinuingBtn'>Continue</button>
             </div>
         </div>
     )

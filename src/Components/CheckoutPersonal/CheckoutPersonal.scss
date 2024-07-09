@@ -88,7 +88,9 @@
 
         &-streetZIP {
             display: flex;
-            gap: 30px;
+            
+            justify-content: space-between;
+
 
             &-street,
             &-ZIP {
@@ -96,6 +98,66 @@
                 flex-direction: column;
                 gap: 2px;
             }
+        }
+    }
+}
+
+@media (max-width: 580px) {
+
+    .personInfoAddressBox{
+        width: 85vw;
+    }
+    .personInfoBox{
+        width: 345px;
+
+        &-mention{
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        &-inputs{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
+    .personAddressBox{
+        width: 345px;
+
+        &-mention{
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        &-inputs{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        
+
+            &-stateCity{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            &-streetZIP{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    }
+
+    .personInfoAddressBox{
+        & label{
+            font-size: 12px;
+        }
+
+        & input{
+            width: 85vw;
+            height: 8vh;
         }
     }
 }

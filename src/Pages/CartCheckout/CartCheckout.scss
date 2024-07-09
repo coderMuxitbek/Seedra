@@ -1,49 +1,54 @@
-.NoContinue{
+.NoContinue {
     display: flex;
+    gap: 30px;
 }
 
-.personalInfoCont{
+.cartCheckoutCont {
+    margin-top: 32px;
+}
+
+.personalInfoCont {
     display: flex;
     flex-direction: column;
     gap: 32px;
 }
 
-.personCheckNavBox{
+.personCheckNavBox {
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    &-westIconBox{
+    &-westIconBox {
         display: flex;
         align-items: center;
         gap: 12px;
 
-        &-westIcon{
+        &-westIcon {
             width: 30px;
             height: 30px;
         }
 
-        &-checkoutMention{
+        &-checkoutMention {
             font-weight: 600;
             font-size: 36px;
             color: #1F2533;
         }
     }
 
-    &-lightsBox{
+    &-lightsBox {
         align-self: flex-end;
         display: flex;
         align-items: end;
         gap: 3px;
 
-        & img{
+        & img {
             width: 22px;
             height: 6px;
         }
     }
 }
 
-.checkoutContinuingBtn{
+.checkoutContinuingBtn {
     width: 160px;
     height: 51px;
     background-color: #359740;
@@ -54,3 +59,41 @@
     font-size: 16px;
 }
 
+@media (max-width: 580px) {
+
+    .checkoutYourCartBox{
+        display: none;
+    }
+
+    .cartCheckoutCont {
+        width: 100%;
+    }
+
+    .cartCheckoutComp1 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 46px;
+    }
+
+    .NoContinue {}
+
+    .personalInfoCont {}
+
+    .personCheckNavBox {
+
+        &-westIconBox {
+
+            &-checkoutMention {
+                font-size: 22px;
+            }
+        }
+
+        &-lightsBox {
+            display: none;
+        }
+    }
+
+
+}

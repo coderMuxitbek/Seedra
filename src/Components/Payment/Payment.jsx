@@ -9,27 +9,63 @@ import MasterCard from '../../assets/Images/cardTypes/MasterCard.png';
 import PayPal from '../../assets/Images/cardTypes/Group (3).png';
 import axios from 'axios';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Payment = () => {
-    const [cardNumber, setCardNumber] = useState();
-    const [expiringdate, setExpiringdate] = useState();
-    const [ccv, setCcv] = useState();
+    const navigate = useNavigate();
 
-    const lalala = async () => {
+    const [paymentObj, setPaymentObj] = useState({
+        cardNumber: "",
+        expiringDate: "",
+        CCV: "",
+    });
 
-        const generatedToken = Math.random().toString(36).slice(2)
+    const [FormPaymentError, setFormPaymentError] = useState({})
 
-        const response = await axios.post("http://localhost:3000/payments", {
-            id: generatedToken,
+    const PaymentOnchange = (e) => {
+        const { name, value } = e.target;
 
-        })
+        setPaymentObj((prev) => {
+            return { ...prev, [name]: value }
+        });
+
+        console.log(paymentObj);
+    };
+
+    const CheckedContinue = () => {
+        setFormPaymentError(CheckPay(paymentObj))
+        console.log("lalala");
+    }
+
+    const CheckPay = (state) => {
+        const error = {};
+
+        const CheckName = {
+            cardNumber: /^\d{4}[-\s]?\d{4}[-\s]?\d{4}[-\s]?\d{4}$/,
+            expiringDate: /^(0[1-9]|1[0-2])\/\d{4}$/,
+            CCV: /^^\d{3,4}$/,
+        }
+
+        if (!CheckName.cardNumber.test(state.cardNumber)) {
+            error.cardNumber = "not correct card number"
+        }
+
+        if (!CheckName.expiringDate.test(state.expiringDate)) {
+            error.expiringDate = "not correct expiring date"
+        }
+
+        if (!CheckName.CCV.test(state.CCV)) {
+            error.CCV = "not correct CCV"
+        }
+
+        return error;
     }
 
     return (
         <div className='paymentCont'>
             <div className="paymentNav">
                 <div className="paymentNav-backBox">
-                    <WestIcon class='paymentNav-backBox-backIcon'></WestIcon>
+                    <p onClick={() => navigate("/cartCheckout")}><WestIcon class='paymentNav-backBox-backIcon'></WestIcon></p>
                     <p className='paymentNav-backBox-mention'>Payment info</p>
                 </div>
 
@@ -63,18 +99,21 @@ const Payment = () => {
                 <div className="cardNumberTimeline">
                     <div className="cardNumberTimeline-cardNumber">
                         <p className='cardNumberTimeline-cardNumber-text'>Card number</p>
-                        <input onChange={(e) => setCardNumber(e.target.value)} className='cardNumberTimeline-cardNumber-input' type="text" placeholder='Card number' />
+                        <input name='cardNumber' onChange={PaymentOnchange} className='cardNumberTimeline-cardNumber-input' type="number" placeholder='Card number' />
+                        {FormPaymentError.cardNumber && <p id='errorPayment'>Must be 16 numbers</p>}
                     </div>
 
                     <div className="cardNumberTimeline-timeline">
                         <div className="cardNumberTimeline-timeline-date">
-                            <p>Expiring date</p>
-                            <input onChange={(e) => setExpiringdate(e.target.value)} type="text" placeholder='Expiring date' />
+                            <p>Expiring date <span>MM/YYYY</span></p>
+                            <input name='expiringDate' className='cardNumberTimeline-timeline-input' onChange={PaymentOnchange} type="text" placeholder='Expiring date' />
+                            {FormPaymentError.expiringDate && <p id='errorPayment'>Expiring date must be written with /</p>}
                         </div>
 
                         <div className="cardNumberTimeline-timeline-CCV">
                             <p className='cardNumberTimeline-timeline-CCV-text'>CCV</p>
-                            <input onChange={(e) => setCcv(e.target.value)} className='cardNumberTimeline-timeline-CCV-input' type="text" />
+                            <input name='CCV' onChange={PaymentOnchange} className='cardNumberTimeline-timeline-input' type="text" placeholder='CCV'/>
+                            {FormPaymentError.CCV && <p id='errorPayment'>Not correct CCV</p>}
                         </div>
                     </div>
                 </div>
@@ -86,7 +125,7 @@ const Payment = () => {
                     <p className='totalAmountPayment-price'>$12.56</p>
                 </div>
 
-                <button className='paymentLastBtn'>
+                <button onClick={CheckedContinue} className='paymentLastBtn'>
                     <p className='paymentLastBtn-price'>$12.56</p>
                     <div className="paymentLastBtn-lastSteps">
                         <p>Continue</p>
@@ -94,7 +133,6 @@ const Payment = () => {
                     </div>
                 </button>
             </div>
-
         </div>
     )
 };

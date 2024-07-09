@@ -1,12 +1,132 @@
 @media (max-width: 580px) {
     .ourBlogs {
-        display: flex;
-        overflow-x: scroll;
+        display: none;
     }
+
+    .ourBlogHead{
+        width: 345px;
+        display: flex;
+        flex-direction: column;
+        gap: 26px;
+        margin-top: 41px;
+    }
+
+    .ourBlogHeadNav{
+        display: flex;
+        align-items: center;
+
+        
+        &-text{
+            font-weight: 600;
+            font-size: 22px;
+        }
+
+        &-btn{
+            border: 1px solid #EFEFEF;
+            border-radius: 8px;
+            padding: 11px 33px;
+            color: #359740;
+            background-color: #FFFFFF;
+        }
+    }
+
+    .ourBlogsMedia{
+        width: 100vw;
+        overflow-x: scroll;        
+        display: flex;
+        gap: 11px;
+    }
+
+    .ourBlogsMedia::-webkit-scrollbar{
+        display: none;
+    }
+
+    .herbalBlog {
+       
+        min-width: 317px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        background-color: #EAF1EB;
+        border-radius: 12px;
+        padding: 20px 24px 147px 20px;
+        position: relative;
+        margin-top: 11px;
+    
+        &-timeText {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+    
+            &-timeBox {
+                display: flex;
+                align-items: center;
+                gap: 8px;
+    
+                &-img {
+                    width: 24px;
+                }
+    
+                &-time {
+                    font-weight: 400;
+                    font-size: 14px;
+                    color: #70737C;
+                }
+            }
+    
+            &-textBox {
+                display: flex;
+                flex-direction: column;
+                gap: 4px;
+    
+                &-how {
+                    font-weight: 700;
+                    font-size: 18px;
+                    color: #1F2533;
+                }
+    
+                &-in {
+                    font-weight: 400;
+                    font-size: 14px;
+                    color: #70737C;
+                }
+            }
+    
+    
+        }
+    
+        &-btn {
+            width: 106px;
+            height: 51px;
+            border-radius: 8px;
+            border: 1px solid #EFEFEF;
+            padding: 11px, 33px, 11px, 33px;
+            background-color: #FFFFFF;
+        }
+    
+        &-herbImg {
+            width: 222px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    
+        &-herbImgGirl{
+            width: 157px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+    }
+
+   
 }
 
-
-
+@media (min-width: 580px) {
+    .ourBlogsMedia{
+        display: none;
+    }
+}
 
 .ourBlogHeadNav {
     display: flex;
@@ -167,6 +287,7 @@
     position: relative;
     padding: 24px 20px 366px 24px;
     background-color: #EFF2F8;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
     gap: 14px;

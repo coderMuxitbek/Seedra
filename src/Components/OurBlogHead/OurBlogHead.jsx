@@ -11,6 +11,7 @@ const OurBlogHead = () => {
                 <p className='ourBlogHeadNav-text'>Our blog.</p>
                 <button className='ourBlogHeadNav-btn'>Go to our blog</button>
             </div>
+            
             <div className="ourBlogs">
                 <div className="ourBlogHeadBlogs">
                     <div className="plants">
@@ -77,6 +78,59 @@ const OurBlogHead = () => {
                         <button className="girlStrawberryCarrying-btn">Read</button>
                         <img className='girlStrawberryCarrying-imgOfGirl' src={Girl} alt="" />
                     </div>
+                </div>
+            </div>
+
+            <div className="ourBlogsMedia">
+                <div className="herbalBlog">
+                    <div className="herbalBlog-timeText">
+                        <div className="herbalBlog-timeText-timeBox">
+                            <img className='herbalBlog-timeText-timeBox-image' src={Clock} alt="" />
+                            <p className='herbalBlog-timeText-timeBox-time'>12.09.2021</p>
+                        </div>
+
+                        <div className="herbalBlog-timeText-textBox">
+                            <p className='herbalBlog-timeText-textBox-how'>How to plant spinach correctly in winter</p>
+                            <p className='herbalBlog-timeText-textBox-in'>In most areas, successive sowing can be done from early spring until early winter, but more often during hotter months...</p>
+                        </div>
+                    </div>
+
+                    <button className='herbalBlog-btn'>Read</button>
+                    <img className='herbalBlog-herbImg' src={Herb} alt="" />
+                </div>
+
+                <div className="herbalBlog">
+                    <div className="herbalBlog-timeText">
+                        <div className="herbalBlog-timeText-timeBox">
+                            <img className='herbalBlog-timeText-timeBox-image' src={Clock} alt="" />
+                            <p className='herbalBlog-timeText-timeBox-time'>12.09.2021</p>
+                        </div>
+
+                        <div className="herbalBlog-timeText-textBox">
+                            <p className='herbalBlog-timeText-textBox-how'>How to plant spinach correctly in winter</p>
+                            <p className='herbalBlog-timeText-textBox-in'>In most areas, successive sowing can be done from early spring until early winter, but more often during hotter months...</p>
+                        </div>
+                    </div>
+
+                    <button className='herbalBlog-btn'>Read</button>
+                    <img className='herbalBlog-herbImg' src={Strawberry} alt="" />
+                </div>
+
+                <div className="herbalBlog">
+                    <div className="herbalBlog-timeText">
+                        <div className="herbalBlog-timeText-timeBox">
+                            <img className='herbalBlog-timeText-timeBox-image' src={Clock} alt="" />
+                            <p className='herbalBlog-timeText-timeBox-time'>12.09.2021</p>
+                        </div>
+
+                        <div className="herbalBlog-timeText-textBox">
+                            <p className='herbalBlog-timeText-textBox-how'>How to plant spinach correctly in winter</p>
+                            <p className='herbalBlog-timeText-textBox-in'>In most areas, successive sowing can be done from early spring until early winter, but more often during hotter months...</p>
+                        </div>
+                    </div>
+
+                    <button className='herbalBlog-btn'>Read</button>
+                    <img className='herbalBlog-herbImgGirl' src={Girl} alt="" />
                 </div>
             </div>
         </div>

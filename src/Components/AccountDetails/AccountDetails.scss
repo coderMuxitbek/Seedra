@@ -1,0 +1,309 @@
+.personFirstContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.NoProfileDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+
+    &-text {
+        font-size: 24px;
+        color: #70737C;
+    }
+
+    &-link {
+        font-size: 16px;
+        color: #359740;
+        text-decoration: underline;
+    }
+}
+
+
+
+
+.personInfoAddressBox {
+    display: flex;
+    flex-direction: column;
+    gap: 54px;
+    width: 730px;
+
+    & label {
+        font-weight: 400;
+        font-size: 14px;
+        color: #70737C;
+    }
+
+    & input {
+        border: 1px solid #EFEFEF;
+        border-radius: 4px;
+        padding: 14px 0px 14px 24px;
+        width: 350px;
+        height: 56px;
+    }
+
+    & input:hover {
+        box-shadow: 0px 1px 6px 0px #00000052;
+    }
+
+    & input:focus {
+        outline: none;
+    }
+}
+
+.personInfoBox {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &-mention {
+        font-weight: 600;
+        font-size: 24px;
+        color: #1F2533;
+    }
+
+    &-inputs {
+        display: flex;
+        gap: 30px;
+
+        &-nameBox {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        &-numberBox {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+
+    }
+}
+
+.personAddressBox {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &-mention {
+        font-weight: 600;
+        font-size: 24px;
+        color: #1F2533;
+    }
+
+    &-inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        &-stateCity {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+
+            &-state,
+            &-city {
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+            }
+        }
+
+        &-streetZIP {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+
+
+            &-street,
+            &-ZIP {
+                display: flex;
+                flex-direction: column;
+                gap: 2px;
+            }
+        }
+    }
+}
+
+.myEmail {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+
+    gap: 30px;
+
+
+    &-myEmail2 {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        &-mention {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1F2533;
+        }
+
+        &-emailImgBox {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            &-imgBox {
+                background-color: rgb(224, 255, 249);
+                padding: 8px 10px;
+                border-radius: 50%;
+            }
+
+            &-emailBox {
+                display: flex;
+                flex-direction: column;
+
+
+                &-email {
+                    color: #1F2533;
+                    font-size: 16px;
+                }
+
+                &-date {
+                    color: #70737C;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+
+    &-changeBtn {
+        background-color: #359740;
+        border-radius: 8px;
+        border: none;
+        color: white;
+        font-weight: 500;
+        font-size: 16px;
+        padding: 11px 23px;
+    }
+
+
+}
+
+.fixedModalEmail {
+    background-color: darkcyan;
+    padding: 50px;
+}
+
+@media (max-width: 580px) {
+
+    .NoProfileDetails{
+        
+    &-text {
+        font-size: 12px;
+        color: #70737C;
+    }
+    }
+    .personInfoAddressBox {
+        width: 65vw;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+
+        & label {
+            font-weight: 400;
+            font-size: 12px;
+            color: #70737C;
+        }
+
+        & input {
+            border: 1px solid #EFEFEF;
+            border-radius: 4px;
+            padding: 14px 0px 14px 24px;
+            width: 65vw;
+            height: 10vw;
+        }
+
+        & input:hover {
+            box-shadow: 0px 1px 6px 0px #00000052;
+        }
+
+        & input:focus {
+            outline: none;
+        }
+    }
+
+    .personInfoBox {
+        width: 345px;
+
+        &-mention {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        &-inputs {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .personAddressBox {
+        width: 345px;
+
+        &-mention {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        &-inputs {
+            display: flex;
+            flex-direction: column;
+
+
+            &-stateCity {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            &-streetZIP {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    }
+
+    .myEmail {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+
+        &-myEmail2 {
+
+            &-mention {
+                font-size: 16px;
+            }
+
+            &-emailImgBox {
+
+                &-emailBox {
+                    &-email {
+                        font-size: 14px;
+                    }
+
+                    &-date {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+
+        &-changeBtn {
+            font-size: 12px;
+        }
+    }
+}

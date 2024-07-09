@@ -1,6 +1,8 @@
 .BigNav {
   width: 100%;
   box-shadow: 0px 1px 5px rgb(204, 204, 204);
+  position: relative;
+  overflow: hidden;
 }
 
 .navCont {
@@ -136,8 +138,13 @@ a {
 }
 
 @media (max-width: 580px) {
+  .BigNav{
+    width: 100%;
+  }
+
   .navCont {
-    width: 350px;
+    width: 90vw;
+    position: relative;
   }
 
   .socialMediaIconsBox,
@@ -147,10 +154,10 @@ a {
   }
 
   .navMenuMedia {
-    width: 70%;
+    width: 270px;
     position: absolute;
     top: 58px;
-    right: -70%;
+    right: -300px;
     z-index: 250;
     height: 90vh;
     background-color: white;
@@ -209,8 +216,6 @@ a {
         }
       }
     }
-
-
   }
 
   .openedMenu {
@@ -226,7 +231,7 @@ a {
     position: absolute;
     background-color: black;
     top: 58px;
-    height: 300%;
+    height: 3000px;
     transition: opacity 0.4s ease, background-color 0.4s ease;
   }
 

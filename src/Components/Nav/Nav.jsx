@@ -13,17 +13,36 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import MenuIcon from '@mui/icons-material/Menu';
 import { prodTypes } from '../../data';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+import { useSelector } from 'react-redux';
 
 const Nav = ({ InputHandler, FilterHandler, openMenu, setOpenMenu }) => {
+    const lala = useSelector((state) => state.SeedsSlice.userDetails)
     const navigate = useNavigate();
     const [cart, setCart] = useState([]);
-
     const navMenuRef = useRef();
     const navBar = useRef()
+
+    const BeDispatcher = ()=> {
+        if(lala.name && lala.email){
+            navigate("/contact")
+        }else{
+            navigate("/myProfile")
+        }
+    }
 
     const GetCartNav = async () => {
         const { data } = await axios.get("http://localhost:3000/cart");
         setCart(data)
+    }
+
+    const closeWithCartIcon = () => {
+        navigate("/cart")
+        setOpenMenu(false)
+    }
+
+    const closeWithMyProfile = () => {
+        navigate("/myProfile/account")
+        setOpenMenu(false)
     }
 
     useEffect(() => {
@@ -32,7 +51,7 @@ const Nav = ({ InputHandler, FilterHandler, openMenu, setOpenMenu }) => {
 
     const CloseModal = (e) => {
         if (!navMenuRef.current.contains(e.target) && !navBar.current.contains(e.target)) {
-            setOpenMenu((false))
+            setOpenMenu(false)
         }
     }
 
@@ -65,31 +84,33 @@ const Nav = ({ InputHandler, FilterHandler, openMenu, setOpenMenu }) => {
 
                     <div className="Cartbox">
                         <div className="navCart">
-                            <ShoppingCartOutlinedIcon sx={{ fontSize: 30, color: "#359740" }} onClick={() => navigate("/cart")}></ShoppingCartOutlinedIcon>
+                            <ShoppingCartOutlinedIcon style={{ cursor: 'pointer' }} sx={{ fontSize: 30, color: "#359740" }} onClick={closeWithCartIcon}></ShoppingCartOutlinedIcon>
                             <p className='cartBoxItemQry'>{cart.length}</p>
                         </div>
-                        <AccountCircleIcon onClick={() => navigate("/myProfile")} sx={{ fontSize: 30, color: "#359740" }}></AccountCircleIcon>
+                        <AccountCircleIcon style={{ cursor: 'pointer' }} onClick={closeWithMyProfile} sx={{ fontSize: 30, color: "#359740" }}></AccountCircleIcon>
                         <p onClick={() => setOpenMenu((prev) => !prev)} className='menuIcon'><MenuIcon></MenuIcon></p>
                     </div>
+
+
                 </div>
 
                 <div ref={navMenuRef} className={openMenu ? "navMenuMedia openedMenu" : "navMenuMedia"} >
                     <div className="navMenuMedia-types">
                         {prodTypes.map((item, i) => {
-                            return <p style={{cursor: "pointer"}} key={i} onClick={() => InputHandler('typeOfPlant', item.name)} className='navMenuMedia-types-type'>{item.name}</p>
+                            return <p style={{ cursor: "pointer" }} key={i} onClick={() => InputHandler('typeOfPlant', item.name)} className='navMenuMedia-types-type'>{item.name}</p>
                         })}
                     </div>
 
                     <div className="navMenuMedia-navLinksSocial">
                         <div className="navMenuMedia-navLinksSocial-navLinks">
-                            <div onClick={()=> setOpenMenu(false)} className="navMenuMedia-navLinksSocial-navLinks-link">
+                            <div onClick={() => setOpenMenu(false)} className="navMenuMedia-navLinksSocial-navLinks-link">
                                 <NavLink to={"/blog"} className="">OUR BLOG</NavLink>
                                 <p className='navMenuMedia-navLinksSocial-navLinks-link-right'>   <NavigateNextIcon sx={{ fontSize: 18, color: "#FFFFFF" }}></NavigateNextIcon></p>
                             </div>
 
-                            <div onClick={()=> setOpenMenu(false)} className="navMenuMedia-navLinksSocial-navLinks-link">
+                            <div onClick={() => setOpenMenu(false)} className="navMenuMedia-navLinksSocial-navLinks-link">
                                 <NavLink to={"/aboutUs"} className='navMenuMedia-navLinksSocial-navLinks-link' href="">ABOUT SEEDRA</NavLink>
-                                <p className='navMenuMedia-navLinksSocial-navLinks-link-right'> <NavigateNextIcon  sx={{ fontSize: 18, color: "#FFFFFF" }}></NavigateNextIcon></p>
+                                <p className='navMenuMedia-navLinksSocial-navLinks-link-right'> <NavigateNextIcon sx={{ fontSize: 18, color: "#FFFFFF" }}></NavigateNextIcon></p>
                             </div>
 
                         </div>
@@ -102,9 +123,7 @@ const Nav = ({ InputHandler, FilterHandler, openMenu, setOpenMenu }) => {
 
 
                 </div>
-
-                <div className={openMenu ? 'opacitied' : 'opac'} ></div>
-
+                {/* <div className={openMenu ? 'opacitied' : 'opac'} ></div> */}
             </div >
 
         </>

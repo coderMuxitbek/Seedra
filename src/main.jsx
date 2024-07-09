@@ -18,6 +18,9 @@ const CartCheckout = lazy(() => import('./Pages/CartCheckout/CartCheckout.jsx'))
 const MyProfile = lazy(() => import('./Pages/MyProfile/MyProfile.jsx'));
 const Contact = lazy(() => import('./Pages/Contact/Contact.jsx'));
 const AllSeeds = lazy(() => import('./Pages/AllSeeds/AllSeeds.jsx'));
+const Payment = lazy(() => import('./Components/Payment/Payment.jsx'));
+const AccountDetails = lazy(() => import('./Components/AccountDetails/AccountDetails.jsx'));
+const OrderHistory = lazy(()=> import('./Components/OrderHistory/OrderHistory.jsx'))
 
 const router = createBrowserRouter([
   {
@@ -50,6 +53,11 @@ const router = createBrowserRouter([
       },
 
       {
+        path: "/payment",
+        element: <Payment />
+      },
+
+      {
         path: "/blog",
         element: <OurBlog />
       },
@@ -59,7 +67,17 @@ const router = createBrowserRouter([
       },
       {
         path: "/myProfile",
-        element: <MyProfile />
+        element: <MyProfile />,
+        children: [
+          {
+            path: "/myProfile/account",
+            element: <AccountDetails />
+          },
+          {
+            path: "/myProfile/orderHistory",
+            element: <OrderHistory/>
+          }
+        ]
       },
       {
         path: "/contact",
