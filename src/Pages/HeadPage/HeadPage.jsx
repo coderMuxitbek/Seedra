@@ -4,21 +4,21 @@ import Head from '../../Components/Head/Head';
 import ProdTypes from '../../Components/ProdTypes/ProdTypes';
 import HeadProducts from '../../Components/HeadProducts/HeadProducts';
 import { useEffect, useState } from 'react';
-import { useGetAllDataQuery } from '../../toolkit/Seeds/SeedsApi';
+// import { useGetAllDataQuery } from '../../toolkit/Seeds/SeedsApi';
 import { saveDataToState, updateFilteredData } from '../../toolkit/Seeds/SeedsSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
 const HeadPage = () => {
     const dispatch = useDispatch();
-    const { data, isLoading } = useGetAllDataQuery();
+    // const { data, isLoading } = useGetAllDataQuery();
     const { filteredData, originalData } = useSelector((state) => state.SeedsSlice);
     const [openFilter, setOpenFilter] = useState(false)
 
-    useEffect(() => {
-        if (!isLoading) {
-            dispatch(saveDataToState(data))
-        }
-    }, [data]);
+    // useEffect(() => {
+    //     if (!isLoading) {
+    //         dispatch(saveDataToState(data))
+    //     }
+    // }, [data]);
 
     const [inputData, setInputData] = useState({
         typeOfPlant: 'ALL',

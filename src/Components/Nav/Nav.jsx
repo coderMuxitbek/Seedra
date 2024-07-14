@@ -14,13 +14,15 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { prodTypes } from '../../data';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import { useSelector } from 'react-redux';
+import { putCart } from '../../toolkit/Seeds/SeedsSlice';
 
 const Nav = ({ InputHandler, FilterHandler, openMenu, setOpenMenu }) => {
     const lala = useSelector((state) => state.SeedsSlice.userDetails)
     const navigate = useNavigate();
     const [cart, setCart] = useState([]);
     const navMenuRef = useRef();
-    const navBar = useRef()
+    const navBar = useRef();
+    const data = useSelector((state)=> state.SeedsSlice.cart)
 
     const BeDispatcher = ()=> {
         if(lala.name && lala.email){
@@ -30,8 +32,7 @@ const Nav = ({ InputHandler, FilterHandler, openMenu, setOpenMenu }) => {
         }
     }
 
-    const GetCartNav = async () => {
-        const { data } = await axios.get("http://localhost:3000/cart");
+    const GetCartNav = () => {
         setCart(data)
     }
 
@@ -88,13 +89,13 @@ const Nav = ({ InputHandler, FilterHandler, openMenu, setOpenMenu }) => {
                             <p className='cartBoxItemQry'>{cart.length}</p>
                         </div>
                         <AccountCircleIcon style={{ cursor: 'pointer' }} onClick={closeWithMyProfile} sx={{ fontSize: 30, color: "#359740" }}></AccountCircleIcon>
-                        <p onClick={() => setOpenMenu((prev) => !prev)} className='menuIcon'><MenuIcon></MenuIcon></p>
+                        <p onClick={() => setOpenMenu((prev)=> !prev)} className='menuIcon'><MenuIcon></MenuIcon></p>
                     </div>
 
 
                 </div>
 
-                <div ref={navMenuRef} className={openMenu ? "navMenuMedia openedMenu" : "navMenuMedia"} >
+                <div ref={navMenuRef} className={openMenu ? "openedMenu" : "navMenuMedia"} >
                     <div className="navMenuMedia-types">
                         {prodTypes.map((item, i) => {
                             return <p style={{ cursor: "pointer" }} key={i} onClick={() => InputHandler('typeOfPlant', item.name)} className='navMenuMedia-types-type'>{item.name}</p>
@@ -120,10 +121,9 @@ const Nav = ({ InputHandler, FilterHandler, openMenu, setOpenMenu }) => {
                             <img src={Facebook} alt="" />
                         </div>
                     </div>
-
-
                 </div>
-                {/* <div className={openMenu ? 'opacitied' : 'opac'} ></div> */}
+                
+                <div className={openMenu ? 'opacitied' : 'opac'} ></div>
             </div >
 
         </>

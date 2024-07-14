@@ -1,13 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { mainData } from "../../mainData";
 
 const initialState = {
-    originalData: [],
+    originalData: mainData,
     filteredData: [],
-    userDetails: {
-        name: "",
-        email: "",
-        message: "",
-    },
+    cart: []
 }
 
 const SeedsSlice = createSlice({
@@ -23,12 +20,12 @@ const SeedsSlice = createSlice({
             state.filteredData = payload;
         },
 
-        saveUserData: (state, { payload }) => {
-            state.userDetails = payload;
+        putCart: (state, {payload})=> {
+            state.cart.push(payload)
         }
     },
 });
 
 
 export default SeedsSlice.reducer;
-export const { saveDataToState, updateFilteredData, saveUserData } = SeedsSlice.actions;
+export const { saveDataToState, updateFilteredData, putCart } = SeedsSlice.actions;

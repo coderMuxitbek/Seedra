@@ -3,8 +3,8 @@ import SearchIcon from '../../assets/Images/icon_search.png';
 import MainNavBtn from '../../Components/MainNavBtn/MainNavBtn';
 import HeadProducts from '../../Components/HeadProducts/HeadProducts';
 import { useEffect, useState } from 'react';
-import { useGetAllDataQuery } from '../../toolkit/Seeds/SeedsApi';
-import { saveDataToState, updateFilteredData } from '../../toolkit/Seeds/SeedsSlice';
+// import { useGetAllDataQuery } from '../../toolkit/Seeds/SeedsApi';
+import { saveDataToState, updateFilteredData, putCart } from '../../toolkit/Seeds/SeedsSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import Filter from '../../Components/Filter/Filter';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
@@ -12,21 +12,26 @@ import Star from '../../assets/Images/Vector (3).png';
 import { useNavigate } from 'react-router-dom';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import axios from 'axios';
-
+import Typography from '@mui/material/Typography';
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
 
 const AllSeeds = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch();
-    const { data, isLoading } = useGetAllDataQuery();
+    // const { data, isLoading } = useGetAllDataQuery();
     const { filteredData, originalData } = useSelector((state) => state.SeedsSlice);
+    const cartData = useSelector((state) => state.SeedsSlice.cart)
+    console.log(cartData);
     const [openFilter, setOpenFilter] = useState(false);
-    const [boxPlan, setBoxPlan] = useState(false)
+    const [boxPlan, setBoxPlan] = useState(false);
+    const [noMatchedProducts, setNoMatchedProducts] = useState(false);
 
-    useEffect(() => {
-        if (!isLoading) {
-            dispatch(saveDataToState(data))
-        }
-    }, [data]);
+    // useEffect(() => {
+    //     if (!isLoading) {
+    //         dispatch(saveDataToState(data))
+    //     }
+    // }, [data]);
 
     const [inputData, setInputData] = useState({
         typeOfPlant: 'ALL',
@@ -69,6 +74,7 @@ const AllSeeds = () => {
         }
 
         dispatch(updateFilteredData(tempData));
+
     };
 
     useEffect(() => {
@@ -82,24 +88,39 @@ const AllSeeds = () => {
         const existing = cartItem.find((item) => item.id === product.id)
 
         if (existing) {
-            await axios.patch(`http://localhost:3000/cart/${existing.id}`, { ...existing, qty: existing.qty + 1 });
+            // const itemExist = cartData.find((item) => item.id === product.id);
+            dispatch(putCart({...existing, qty: existing.qty + 1}));
+            // await axios.patch(`http://localhost:3000/cart/${existing.id}`, { ...existing, qty: existing.qty + 1 });
             const newItem = cartItem.map((item) => item.id === product.id ? { ...item, qty: item.qty + 1 } : item)
             setCartItem((prev) => [...prev, newItem])
         } else {
-            await axios.post("http://localhost:3000/cart", { ...product, qty: 1 });
+            dispatch(putCart({ ...product, qty: 1 }))
+            // await axios.post("http://localhost:3000/cart", { ...product, qty: 1 });
             setCartItem((prev) => {
                 return [...prev, { ...product, qty: 1 }]
-            })
+            });
         }
 
-        const { data } = await axios.get("http://localhost:3000/cart");
+        // const { data } = await axios.get("http://localhost:3000/cart");
 
-        if (data.find((item) => item.id === product.id)) {
-            setDoneCart(true)
-        } else {
-            setDoneCart(false)
-        }
+        // if (data.find((item) => item.id === product.id)) {
+        //     setDoneCart(true)
+        // } else {
+        //     setDoneCart(false)
+        // }
     }
+
+    // pagination
+    const [page, setPage] = useState(1);
+    const [postsPerPage, setPostsPerPage] = useState(9);
+
+    const ChangePagination = (event, value) => {
+        setPage(value);
+    };
+
+    const lastIndex = page * postsPerPage;
+    const firstIndex = lastIndex - postsPerPage;
+    const pages = Math.ceil(filteredData.length / postsPerPage);
 
     return (
         <div className='AllSeeds'>
@@ -122,37 +143,54 @@ const AllSeeds = () => {
                     <p className='OpenFilterBtn-img'><KeyboardArrowDownIcon></KeyboardArrowDownIcon></p>
                 </div>
 
-                <div className="filterProducts">
-                    {filteredData.map((item, i) => {
-                        return <div key={i} className='filterProducts-prod'>
-                            <img onClick={() => navigate(`/eachProduct/${item.id}`)} className='filterProducts-prod-image' src={item.image} alt="" />
-                            <div className="filterProducts-prod-aboutItem">
-                                <div className="filterProducts-prod-aboutItem-textStars">
-                                    <div className="filterProducts-prod-aboutItem-textStars-stars">
-                                        <div className="filterProducts-prod-aboutItem-textStars-starsBox">
-                                            <img src={Star} alt="" />
-                                            <img src={Star} alt="" />
-                                            <img src={Star} alt="" />
-                                            <img src={Star} alt="" />
-                                            <img src={Star} alt="" />
+                <div className="filterWhenPag">
+                    <div className="filterProducts">
+                        {filteredData.slice(firstIndex, lastIndex).map((item, i) => {
+                            return <div key={i} className='filterProducts-prod'>
+                                <img onClick={() => navigate(`/eachProduct/${item.id}`)} className='filterProducts-prod-image' src={item.image} alt="" />
+                                <div className="filterProducts-prod-aboutItem">
+                                    <div className="filterProducts-prod-aboutItem-textStars">
+                                        <div className="filterProducts-prod-aboutItem-textStars-stars">
+                                            <div className="filterProducts-prod-aboutItem-textStars-starsBox">
+                                                <img src={Star} alt="" />
+                                                <img src={Star} alt="" />
+                                                <img src={Star} alt="" />
+                                                <img src={Star} alt="" />
+                                                <img src={Star} alt="" />
+                                            </div>
+                                            <p>(135)</p>
                                         </div>
-                                        <p>(135)</p>
+                                        <p style={{ cursor: 'pointer' }} onClick={() => navigate(`/eachProduct/${item.id}`)} className='filterProducts-prod-aboutItem-text'>{item.text}</p>
                                     </div>
-                                    <p style={{ cursor: 'pointer' }} onClick={() => navigate(`/eachProduct/${item.id}`)} className='filterProducts-prod-aboutItem-text'>{item.text}</p>
-                                    <p>{item.seedType}</p>
-                                    <p>{item.mainFeatures}</p>
-                                    <p>{item.sunlight}</p>
-                                </div>
 
-                                <div className="filterProducts-prod-aboutItem-btnBox">
-                                    <p className='filterProducts-prod-aboutItem-btnBox-price'>${item.price}</p>
-                                    {doneCart && <p>doneIcon</p>}
-                                    <p className='filterProducts-prod-aboutItem-btnBox-cartImg'>  <ShoppingCartOutlinedIcon onClick={() => AddCart(item)} sx={{ color: "#359740" }}></ShoppingCartOutlinedIcon></p>
+                                    <p>{item.mainFeatures}</p>
+                                    <p>{item.seedType}</p>
+                                    <p>{item.sunlight}</p>
+
+                                    <div className="filterProducts-prod-aboutItem-btnBox">
+                                        <p className='filterProducts-prod-aboutItem-btnBox-price'>${item.price}</p>
+                                        <p className='filterProducts-prod-aboutItem-btnBox-cartImg'>  <ShoppingCartOutlinedIcon onClick={() => AddCart(item)} sx={{ color: "#359740" }}></ShoppingCartOutlinedIcon></p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    })}
+                        })}
+                    </div>
+
+
+
+
+                    <div className="pagProducts">
+                        <Stack spacing={2}>
+                            <Typography>Page: {page}</Typography>
+                            <Pagination size='large' count={pages} page={page} onChange={ChangePagination} />
+                        </Stack>
+                    </div>
+
+
                 </div>
+
+
+
             </div>
         </div>
     )
