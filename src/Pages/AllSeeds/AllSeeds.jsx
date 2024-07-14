@@ -3,7 +3,6 @@ import SearchIcon from '../../assets/Images/icon_search.png';
 import MainNavBtn from '../../Components/MainNavBtn/MainNavBtn';
 import HeadProducts from '../../Components/HeadProducts/HeadProducts';
 import { useEffect, useState } from 'react';
-// import { useGetAllDataQuery } from '../../toolkit/Seeds/SeedsApi';
 import { saveDataToState, updateFilteredData, putCart } from '../../toolkit/Seeds/SeedsSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import Filter from '../../Components/Filter/Filter';
@@ -19,19 +18,12 @@ import Stack from '@mui/material/Stack';
 const AllSeeds = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch();
-    // const { data, isLoading } = useGetAllDataQuery();
     const { filteredData, originalData } = useSelector((state) => state.SeedsSlice);
     const cartData = useSelector((state) => state.SeedsSlice.cart)
     console.log(cartData);
     const [openFilter, setOpenFilter] = useState(false);
     const [boxPlan, setBoxPlan] = useState(false);
     const [noMatchedProducts, setNoMatchedProducts] = useState(false);
-
-    // useEffect(() => {
-    //     if (!isLoading) {
-    //         dispatch(saveDataToState(data))
-    //     }
-    // }, [data]);
 
     const [inputData, setInputData] = useState({
         typeOfPlant: 'ALL',
@@ -88,26 +80,15 @@ const AllSeeds = () => {
         const existing = cartItem.find((item) => item.id === product.id)
 
         if (existing) {
-            // const itemExist = cartData.find((item) => item.id === product.id);
             dispatch(putCart({...existing, qty: existing.qty + 1}));
-            // await axios.patch(`http://localhost:3000/cart/${existing.id}`, { ...existing, qty: existing.qty + 1 });
             const newItem = cartItem.map((item) => item.id === product.id ? { ...item, qty: item.qty + 1 } : item)
             setCartItem((prev) => [...prev, newItem])
         } else {
             dispatch(putCart({ ...product, qty: 1 }))
-            // await axios.post("http://localhost:3000/cart", { ...product, qty: 1 });
             setCartItem((prev) => {
                 return [...prev, { ...product, qty: 1 }]
             });
         }
-
-        // const { data } = await axios.get("http://localhost:3000/cart");
-
-        // if (data.find((item) => item.id === product.id)) {
-        //     setDoneCart(true)
-        // } else {
-        //     setDoneCart(false)
-        // }
     }
 
     // pagination

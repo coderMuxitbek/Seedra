@@ -5,7 +5,6 @@ import axios from 'axios';
 import { saveDataToState, updateFilteredData, putCart } from '../../toolkit/Seeds/SeedsSlice';
 import { useDispatch, useSelector } from 'react-redux';
 
-
 const Cart = () => {
     const data = useSelector((state) => state.SeedsSlice.cart)
     const [cart, setCart] = useState(data);
@@ -14,14 +13,12 @@ const Cart = () => {
     const dispatch = useDispatch()
 
     const GetData = async () => {
-        // const { data } = await axios.get("http://localhost:3000/cart");
         setCart(data)
     }
 
     const AddCart = async (product) => {
         const existing = cart.find((item) => item.id === product.id)
         dispatch(putCart({ ...existing, qty: existing.qty + 1 }))
-        // await axios.put(`http://localhost:3000/cart/${existing.id}`, { ...existing, qty: existing.qty + 1 });
         const newItem = cart.map((item) => item.id === product.id ? { ...item, qty: item.qty + 1 } : item)
         setCartItem(newItem)
         GetData()
@@ -33,14 +30,12 @@ const Cart = () => {
         if (existing.qty === 1) {
             console.log("exist");
             dispatch(putCart({ existing }))
-            // await axios.delete(`http://localhost:3000/cart/${existing.id}`, { existing });
             setCart((prev) => {
                 return prev.filter((item) => item.id !== product.id)
             })
         } else {
             console.log("not exist");
             dispatch(putCart({ ...existing, qty: existing.qty - 1 }))
-            // await axios.patch(`http://localhost:3000/cart/${existing.id}`, { ...existing, qty: existing.qty - 1 });
             setCart((prev) => {
                 return prev.map((item) => item.id === existing.id ? { ...item, qty: item.qty - 1 } : item)
             })
