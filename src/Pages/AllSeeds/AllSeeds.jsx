@@ -19,9 +19,17 @@ const AllSeeds = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch();
     const { filteredData, originalData } = useSelector((state) => state.SeedsSlice);
-    const cartData = useSelector((state) => state.SeedsSlice.cart)
-    console.log(cartData);
-    const [openFilter, setOpenFilter] = useState(false);
+    const cartData = useSelector((state) => state.SeedsSlice.cart);
+    const [cartState, setCartState] = useState(cartData)
+
+    const TakeData = () => {
+        setCartState(cartData)
+    }
+
+    useEffect(() => {
+        TakeData()
+    }, [])
+
     const [boxPlan, setBoxPlan] = useState(false);
     const [noMatchedProducts, setNoMatchedProducts] = useState(false);
 
@@ -41,7 +49,6 @@ const AllSeeds = () => {
         setInputData((prev) => {
             return { ...prev, [type]: name }
         });
-        setOpenFilter(true)
     }
 
     const FilterHandler = () => {
@@ -76,19 +83,24 @@ const AllSeeds = () => {
     const [cartItem, setCartItem] = useState([]);
     const [doneCart, setDoneCart] = useState(false);
 
-    const AddCart = async (product) => {
-        const existing = cartItem.find((item) => item.id === product.id)
+    const AddCart = (product) => {
+        dispatch(putCart({ ...product, qty: 1 }))
 
-        if (existing) {
-            dispatch(putCart({...existing, qty: existing.qty + 1}));
-            const newItem = cartItem.map((item) => item.id === product.id ? { ...item, qty: item.qty + 1 } : item)
-            setCartItem((prev) => [...prev, newItem])
-        } else {
-            dispatch(putCart({ ...product, qty: 1 }))
-            setCartItem((prev) => {
-                return [...prev, { ...product, qty: 1 }]
-            });
-        }
+        // const existing = cartState.find((item) => item.id === product.id)
+
+        // if (existing) {
+        //     cartState.find((obj) => obj.id === product.id && dispatch(putCart({ ...existing, qty: obj.qty + 1 })))
+
+        //     const newItem = cartItem.map((item) => item.id === product.id ? { ...item, qty: item.qty + 1 } : item)
+        //     setCartItem((prev) => [...prev, newItem])
+        // } else {
+        //     dispatch(putCart({ ...product, qty: 1 }))
+        //     setCartItem((prev) => {
+        //         return [...prev, { ...product, qty: 1 }]
+        //     });
+        // }
+
+        TakeData()
     }
 
     // pagination
@@ -115,13 +127,13 @@ const AllSeeds = () => {
             </div>
 
             <div className="productsTwinBox">
-                {!boxPlan && <div className="filterBoxPlan">
-                    <Filter openFilter={openFilter} inputData={inputData} handleChange={handleChange} InputHandler={InputHandler} />
-                </div>}
-
-                <div onClick={() => setBoxPlan((prev) => !prev)} className="OpenFilterBtn">
+                <div style={{cursor: 'pointer'}} onClick={() => setBoxPlan((prev) => !prev)} className="OpenFilterBtn">
                     <p className='OpenFilterBtn-mention'>FILTERS</p>
                     <p className='OpenFilterBtn-img'><KeyboardArrowDownIcon></KeyboardArrowDownIcon></p>
+                </div>
+
+                <div className={!boxPlan ? "filterBoxPlanActive" : "filterBoxPlan"}>
+                    <Filter inputData={inputData} handleChange={handleChange} InputHandler={InputHandler} />
                 </div>
 
                 <div className="filterWhenPag">
@@ -144,13 +156,9 @@ const AllSeeds = () => {
                                         <p style={{ cursor: 'pointer' }} onClick={() => navigate(`/eachProduct/${item.id}`)} className='filterProducts-prod-aboutItem-text'>{item.text}</p>
                                     </div>
 
-                                    <p>{item.mainFeatures}</p>
-                                    <p>{item.seedType}</p>
-                                    <p>{item.sunlight}</p>
-
                                     <div className="filterProducts-prod-aboutItem-btnBox">
                                         <p className='filterProducts-prod-aboutItem-btnBox-price'>${item.price}</p>
-                                        <p className='filterProducts-prod-aboutItem-btnBox-cartImg'>  <ShoppingCartOutlinedIcon onClick={() => AddCart(item)} sx={{ color: "#359740" }}></ShoppingCartOutlinedIcon></p>
+                                        <p className='filterProducts-prod-aboutItem-btnBox-cartImg'>  <ShoppingCartOutlinedIcon onClick={() => AddCart(item)}></ShoppingCartOutlinedIcon></p>
                                     </div>
                                 </div>
                             </div>
@@ -166,8 +174,6 @@ const AllSeeds = () => {
                             <Pagination size='large' count={pages} page={page} onChange={ChangePagination} />
                         </Stack>
                     </div>
-
-
                 </div>
 
 

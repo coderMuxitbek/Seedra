@@ -4,7 +4,7 @@ import { useState } from 'react';
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 
-const ProdTypes = ({ InputHandler, handleChange, FilterHandler, inputData, openFilter }) => {
+const ProdTypes = ({ InputHandler, handleChange, FilterHandler, inputData }) => {
 
     return (
         <>

@@ -79,13 +79,18 @@
         flex-direction: column;
         text-align: center;
 
-        &-log {}
     }
 
     &-btns {
         display: flex;
         gap: 20px;
         align-self: flex-end;
+
+        &-btn {
+            padding: 5px 20px;
+            background-color: #359740;
+            color: white;
+        }
     }
 }
 
@@ -103,30 +108,31 @@
     position: absolute;
     inset: 0;
     background-color: black;
-    opacity: 0.5;
+    opacity: 0.3;
 }
 
 
 
 @media (max-width: 580px) {
 
-    .logOutModal{
-        
+    .logOutModal {
+
         position: fixed;
         top: 30%;
         left: 15%;
 
-        &-textBox{
+        &-textBox {
 
-            &-text{
+            &-text {
                 font-size: 12px;
             }
         }
     }
 
-    .logOutActive{
+    .logOutActive {
         width: 300px;
     }
+
     .myProfile {
         width: 90vw;
     }

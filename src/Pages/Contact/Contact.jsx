@@ -3,7 +3,6 @@ import PhoneIcon from '../../assets/Images/contactImages/Frame 187.png';
 import MailIcon from '../../assets/Images/contactImages/Frame 188.png';
 import { motion } from 'framer-motion'
 import { useState } from 'react';
-import { saveUserData } from '../../toolkit/Seeds/SeedsSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 

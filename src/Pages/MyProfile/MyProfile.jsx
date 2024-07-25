@@ -50,14 +50,9 @@ const MyProfile = () => {
                         <p className='myProfileLink'>Order History</p>
                     </NavLink>
 
-                    <NavLink to={"/myProfile/account"} className="profileLink">
+                    <NavLink to={"/myProfile/purchases"} className="profileLink">
                         <p className='myProfileLinkImg'><PersonIcon></PersonIcon></p>
-                        <p className='myProfileLink'>Purchase</p>
-                    </NavLink>
-
-                    <NavLink to={"/myProfile/account"} className="profileLink">
-                        <p className='myProfileLinkImg'><PersonIcon></PersonIcon></p>
-                        <p className='myProfileLink'>Account Details</p>
+                        <p className='myProfileLink'>Purchases</p>
                     </NavLink>
                 </div>
 

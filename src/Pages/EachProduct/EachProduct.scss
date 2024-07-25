@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     flex-direction: row;
+    border: none;
 
     &-imgBox {
         display: flex;
@@ -13,6 +14,11 @@
     }
 
     &-packsBox {
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 20px;
 
         &-mainTextBox {
             display: flex;
@@ -47,8 +53,8 @@
                     width: 176px;
                     height: 40px;
                     border: 1px solid #EFEFEF;
+                    background-color: white;
                     border-radius: 119px;
-                    background-color: #EFEFEF;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -61,6 +67,9 @@
 }
 
 .allPacks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 
     &-sizeQty {
         display: flex;
@@ -68,26 +77,38 @@
 
         &-size {
             display: flex;
+            align-items: center;
             gap: 9px;
 
+            &-mention {
+                font-size: 14px;
+                font-weight: 400;
+                color: #70737C;
+            }
 
+            &-text {
+                font-size: 16px;
+                color: #1F2533;
+                font-weight: 500;
+            }
         }
 
         &-btnBox {
             display: flex;
             align-items: center;
             gap: 8px;
-            border: 1px solid;
+            border: 1px solid #EFEFEF;
             border-radius: 11px;
-            background-color: #EFEFEF;
             padding: 5px 15px;
 
             &-plus {
                 font-size: 26px;
+                color: #359740;
             }
 
             &-minus {
                 font-size: 26px;
+                color: #359740;
             }
 
             &-number {
@@ -98,28 +119,156 @@
         }
     }
 
-    &-numberOfPacks {
+    &-addCartBox {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &-price {
+            display: flex;
+            flex-direction: column;
+
+            &-old {
+                font-weight: 500;
+                font-size: 16px;
+                color: #70737C;
+            }
+
+            &-new {
+                font-weight: 600;
+                font-size: 28px;
+                color: #1F2533;
+            }
+        }
+
+        &-btn {
+            padding: 11px 33px;
+            background-color: #359740;
+            border-radius: 8px;
+            color: white;
+            border: none;
+        }
+
+        &-btn:hover {
+            background-color: #2BB159;
+        }
+    }
+
+    // &-numberOfPacks {
+    //     display: flex;
+    //     flex-direction: column;
+    //     gap: 8px;
+
+    //     &-packDiv {
+    //         padding: 14px 17px 14px 12px;
+    //         display: flex;
+    //         justify-content: space-between;
+    //         align-items: center;
+    //         border: 1px solid #4FA083;
+    //         border-radius: 8px;
+
+    //         &-numberDiv {
+    //             display: flex;
+    //             gap: 13px;
+
+    //             &-img {
+    //                 width: 18px;
+    //                 color: green;
+    //             }
+    //         }
+    //     }
+    // }
+}
+
+.productInfoBox {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    &-mention {
+        font-size: 36px;
+        font-weight: 600;
+        color: #1F2533;
+        padding: 24px 0px;
+        border-bottom: 1px solid #EFEFEF;
+    }
+}
+
+.textDimensions {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &-text {
+        color: #1F2533;
+        font-weight: 300;
+        font-size: 16px;
+        width: 50%;
+    }
+
+    &-dimensionsBox {
+        height: 198px;
+        width: 40%;
+        padding: 14px 24px;
+        border: 1px solid #EFEFEF;
+        border-radius: 12px;
+
+
+        &-packageDimensions {
+            padding: 15px 0px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            &-text {
+                font-weight: 400;
+                font-size: 14px;
+                color: #70737C;
+                line-height: 28px;
+            }
+
+            &-result {
+                font-weight: 500;
+                font-size: 16px;
+                color: #1F2533;
+            }
+        }
+
+        .middo {
+            border-top: 1px solid #EFEFEF;
+            border-bottom: 1px solid #EFEFEF;
+        }
+
+    }
+}
+
+// .spoPoint::before {
+//     content: "O";
+//     min-width: 5px;
+//     height: 5px;
+//     border-radius: 50%;
+//     background-color: black;
+// }
+
+@media (max-width: 580px) {
+    .productBox {
         display: flex;
         flex-direction: column;
-        gap: 8px;
+    }
 
-        &-packDiv {
-            padding: 14px 17px 14px 12px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border: 1px solid #4FA083;
-            border-radius: 8px;
+    .textDimensions {
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
 
-            &-numberDiv {
-                display: flex;
-                gap: 13px;
+        &-text {
+            width: 100%;
+        }
 
-                &-img{
-                    width: 18px;
-                    color: green;
-                }
-            }
+        &-dimensionsBox {
+            width: 100%;
         }
     }
 }

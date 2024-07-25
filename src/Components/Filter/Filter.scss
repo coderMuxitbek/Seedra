@@ -39,13 +39,17 @@
     }
 }
 
-.prodTypesActive {
-    transition: all 1s ease;
-    margin-left: 0;
-}
-
 .optionsOpen {
     opacity: 1;
     height: 195px;
     transition: opacity 1s ease, height 1s ease;
+}
+
+@media (max-width: 580px) {
+    .productFilters{
+        padding: 10px;
+        width: 90vw;
+        box-shadow: 0px 1px 3px black;
+        margin-bottom: 10px;
+    }
 }

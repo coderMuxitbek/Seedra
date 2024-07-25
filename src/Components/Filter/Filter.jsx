@@ -2,13 +2,13 @@ import '../Filter/Filter.scss';
 import { useState } from 'react';
 import ProdTypes from "../ProdTypes/ProdTypes";
 
-const Filter = ({ openFilter, inputData, handleChange, FilterHandler, InputHandler }) => {
+const Filter = ({ inputData, handleChange, FilterHandler, InputHandler }) => {
     const [openSeed, setOpenSeed] = useState(false);
     const [openFeatues, setOpenFeatues] = useState(false);
     const [sun, setSun] = useState(false);
 
     return (
-        <div className={openFilter ? "productFilters prodTypesActive" : "productFilters"}>
+        <div className="productFilters">
             <p className="productFilters-mention">FILTERS</p>
 
             <div className="productFilters-seedTypes">
@@ -81,7 +81,7 @@ const Filter = ({ openFilter, inputData, handleChange, FilterHandler, InputHandl
                     </div>
 
                     <div className="productFilters-seedTypes-options-optionRadio">
-                        <input onClick={(e) => InputHandler("sunlight", e.target.value)}  value="Partial Shade" type="radio" name="sunlight" />
+                        <input onClick={(e) => InputHandler("sunlight", e.target.value)} value="Partial Shade" type="radio" name="sunlight" />
                         <label className='productFilters-seedTypes-options-optionRadio-label' htmlFor="">Partial Shade</label>
                     </div>
 
@@ -92,7 +92,7 @@ const Filter = ({ openFilter, inputData, handleChange, FilterHandler, InputHandl
                 </div>
             </div>
 
-            <ProdTypes openFilter={openFilter} inputData={inputData} handleChange={handleChange} FilterHandler={FilterHandler} />
+            <ProdTypes inputData={inputData} handleChange={handleChange} FilterHandler={FilterHandler} />
         </div>
     )
 };

@@ -20,8 +20,12 @@ const SeedsSlice = createSlice({
             state.filteredData = payload;
         },
 
-        putCart: (state, {payload})=> {
-            state.cart.push(payload)
+        putCart: (state, { payload }) => {
+            state.cart.push(payload);
+            const pepe = state.cart.filter((obj) => obj.id !== payload.id)
+            console.log(pepe);
+            state.cart === pepe
+
         }
     },
 });

@@ -1,0 +1,199 @@
+
+@media (min-width: 1110px) {
+    
+}
+.welcomeBlogBig {
+    padding: 64px 230px;
+    background-color: #EAF1EB;
+    position: relative;
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+    text-align: center;
+
+    &-welcome {
+        font-size: 48px;
+        font-weight: 600;
+        color: #1F2533;
+    }
+
+    &-here {
+        font-size: 16px;
+        font-weight: 300;
+        color: #1F2533;
+    }
+
+    &-left {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+
+    &-leftTop {
+        position: absolute;
+        left: 76px;
+        bottom: 59.25px;
+
+    }
+
+    &-right {
+        position: absolute;
+        right: 0;
+        bottom: 67px;
+    }
+
+    &-rightTop {
+        position: absolute;
+        right: 0;
+        top: 15px;
+    }
+}
+
+.seedraEfficientBox{
+    margin-top: 93px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &-textBox{
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        gap: 31px;
+
+        &-mainTitle{
+            font-weight: 600;
+            font-size: 36px;
+            color: #1F2533;
+        }
+
+        &-text{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            font-size: 16px;
+            font-weight: 300;
+            color: #1F2533;
+        }
+
+    }
+
+    &-img{
+        width: 45%;
+        height: 465px;
+        border: 2px solid;
+    }
+
+    &-img2{
+        width: 540px;
+        height: 540px;
+        border: 2px solid;
+        border-radius: 28px;
+    }
+}
+
+.teamBox{
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 79px;
+}
+
+.teamMeet{
+    font-weight: 600;
+    font-size: 36px;
+    color: #1F2533;
+}
+
+.teamMembers{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+    &-member{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+
+        &-memberImg{
+            width: 255px;
+            height: 255px;
+            border-radius: 50%;
+            border: 2px solid;
+        }
+
+        &-about{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+
+            &-name{
+                font-weight: 600;
+                font-size: 22px;
+                color: #1F2533;
+            }
+
+            &-who{
+                font-size: 16px;
+                font-weight: 300;
+                color: #1F2533;
+            }
+        }
+    }
+}
+
+.seedraEfficientBoxBig{
+    display: none;
+}
+
+.welcomeBlog{
+    display: none;
+}
+
+@media (max-width: 580px) {
+
+    .welcomeBlogBig{
+        display: none;
+    }
+
+    .seedraEfficientBox{    
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 0px;
+
+        &-textBox{
+            width: 100%;
+        }
+
+        &-img{
+            width: 100%;
+        }
+
+        &-img2{
+            width: 100%;
+        }
+    }
+
+    .seedraEfficientBoxPro{
+        display: none;
+    }
+
+    .teamMembers{
+        display: flex;
+        gap: 30px;
+        overflow: scroll;
+    }
+
+    .teamMembers::-webkit-scrollbar{
+        display: none;
+    }
+}

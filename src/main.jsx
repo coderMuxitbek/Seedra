@@ -21,6 +21,7 @@ const AllSeeds = lazy(() => import('./Pages/AllSeeds/AllSeeds.jsx'));
 const Payment = lazy(() => import('./Components/Payment/Payment.jsx'));
 const AccountDetails = lazy(() => import('./Components/AccountDetails/AccountDetails.jsx'));
 const OrderHistory = lazy(() => import('./Components/OrderHistory/OrderHistory.jsx'));
+const Purchases = lazy(() => import('./Components/Purchases/Purchases.jsx'));
 
 const router = createBrowserRouter([
   {
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
           {
             path: "/myProfile/orderHistory",
             element: <OrderHistory />
+          },
+          {
+            path: "/myProfile/purchases",
+            element: < Purchases />
           }
         ]
       },
