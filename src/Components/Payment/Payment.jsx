@@ -44,7 +44,7 @@ const Payment = () => {
         if (FormPaymentError.cardNumber || FormPaymentError.expiringDate || FormPaymentError.CCV) {
             console.log(FormPaymentError);
         } else {
-            navigate("/")
+           console.log("you are ready");
         }
     }, [FormPaymentError])
 
