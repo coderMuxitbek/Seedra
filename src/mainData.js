@@ -8,7 +8,8 @@ export const mainData = [
         seedType: "Hybrid",
         mainFeatures: "Drought Tolerant",
         sunlight: "Full Sun",
-        id: "05695843"
+        id: "05695843",
+        qty: 1
     },
     {
         image: "https://mobileimages.lowes.com/productimages/1bd5a4f3-2cb8-4dad-99bc-03cf9d9811da/16863459.jpg",

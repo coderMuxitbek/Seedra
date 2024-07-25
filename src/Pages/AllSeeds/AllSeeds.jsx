@@ -84,7 +84,7 @@ const AllSeeds = () => {
     const [doneCart, setDoneCart] = useState(false);
 
     const AddCart = (product) => {
-        dispatch(putCart({ ...product, qty: 1 }))
+        dispatch(putCart({ ...product, qty: +1 }))
 
         // const existing = cartState.find((item) => item.id === product.id)
 
@@ -117,11 +117,6 @@ const AllSeeds = () => {
 
     return (
         <div className='AllSeeds'>
-            {/* <div className="allSeedsSearch">
-                <img className='allSeedsSearch-img' src={SearchIcon} alt="" />
-                <input className='allSeedsSearch-input' type="text" placeholder='Search' />
-            </div> */}
-
             <div className="filterBtn">
                 <MainNavBtn FilterHandler={FilterHandler} InputHandler={InputHandler} />
             </div>
@@ -158,15 +153,12 @@ const AllSeeds = () => {
 
                                     <div className="filterProducts-prod-aboutItem-btnBox">
                                         <p className='filterProducts-prod-aboutItem-btnBox-price'>${item.price}</p>
-                                        <p className='filterProducts-prod-aboutItem-btnBox-cartImg'>  <ShoppingCartOutlinedIcon onClick={() => AddCart(item)}></ShoppingCartOutlinedIcon></p>
+                                        <p className='filterProducts-prod-aboutItem-btnBox-cartImg'><ShoppingCartOutlinedIcon onClick={() => AddCart(item)}></ShoppingCartOutlinedIcon></p>
                                     </div>
                                 </div>
                             </div>
                         })}
                     </div>
-
-
-
 
                     <div className="pagProducts">
                         <Stack spacing={2}>
