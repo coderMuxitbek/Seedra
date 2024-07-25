@@ -8,10 +8,11 @@ import Visa from '../../assets/Images/cardTypes/Group (2).png';
 import MasterCard from '../../assets/Images/cardTypes/MasterCard.png';
 import PayPal from '../../assets/Images/cardTypes/Group (3).png';
 import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const Payment = () => {
+    const [totalPrice, setTotalPrice] = useState("")
     const navigate = useNavigate();
 
     const [paymentObj, setPaymentObj] = useState({
@@ -35,7 +36,17 @@ const Payment = () => {
     const CheckedContinue = () => {
         setFormPaymentError(CheckPay(paymentObj))
         console.log("lalala");
+
+
     }
+
+    useEffect(() => {
+        if (FormPaymentError.cardNumber || FormPaymentError.expiringDate || FormPaymentError.CCV) {
+            console.log(FormPaymentError);
+        } else {
+            navigate("/")
+        }
+    }, [FormPaymentError])
 
     const CheckPay = (state) => {
         const error = {};
@@ -60,6 +71,10 @@ const Payment = () => {
 
         return error;
     }
+
+    useEffect(() => {
+        setTotalPrice(localStorage.getItem("totalPrice"))
+    }, [])
 
     return (
         <div className='paymentCont'>
@@ -112,7 +127,7 @@ const Payment = () => {
 
                         <div className="cardNumberTimeline-timeline-CCV">
                             <p className='cardNumberTimeline-timeline-CCV-text'>CCV</p>
-                            <input name='CCV' onChange={PaymentOnchange} className='cardNumberTimeline-timeline-input' type="text" placeholder='CCV'/>
+                            <input name='CCV' onChange={PaymentOnchange} className='cardNumberTimeline-timeline-input' type="text" placeholder='CCV' />
                             {FormPaymentError.CCV && <p id='errorPayment'>Not correct CCV</p>}
                         </div>
                     </div>
@@ -122,11 +137,11 @@ const Payment = () => {
             <div className="totalsPayment">
                 <div className="totalAmountPayment">
                     <p className='totalAmountPayment-text'>Total amount</p>
-                    <p className='totalAmountPayment-price'>$12.56</p>
+                    <p className='totalAmountPayment-price'>${totalPrice}.00</p>
                 </div>
 
                 <button onClick={CheckedContinue} className='paymentLastBtn'>
-                    <p className='paymentLastBtn-price'>$12.56</p>
+                    <p className='paymentLastBtn-price'>${totalPrice}.00</p>
                     <div className="paymentLastBtn-lastSteps">
                         <p>Continue</p>
                         <ArrowForwardIcon></ArrowForwardIcon>

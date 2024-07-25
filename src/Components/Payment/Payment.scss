@@ -156,7 +156,6 @@
 @media (max-width: 580px) {
     .paymentCont {
         width: 345px;
-
     }
 
     .paymentNav {
@@ -185,12 +184,12 @@
             &-timeline {
                 width: 345px;
                 display: flex;
+                flex-direction: row;
+                align-items: center;
 
                 & div {
                     width: 45%;
                 }
-
-
             }
         }
     }

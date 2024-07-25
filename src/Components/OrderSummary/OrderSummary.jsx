@@ -20,6 +20,11 @@ const OrderSummary = ({ cart, total }) => {
             }
     }, [delivery])
 
+    const sendTotalLocally = ()=> {
+        localStorage.setItem("totalPrice", JSON.stringify(total / 100 * percent + total))
+        navigate("/cartCheckout")
+    }
+
 
 
     return (
@@ -53,7 +58,7 @@ const OrderSummary = ({ cart, total }) => {
                     <p className='sumTotalsContinue-summaryTotals-price'>${total / 100 * percent + total}</p>
                 </div>
 
-                <button onClick={() => navigate("/cartCheckout")} className='sumTotalsContinue-btn'>Continue</button>
+                <button onClick={sendTotalLocally} className='sumTotalsContinue-btn'>Continue</button>
             </div>
         </div>
     )
