@@ -24,8 +24,7 @@ const ProdTypes = ({ InputHandler, handleChange, FilterHandler, inputData }) => 
                                     getAriaLabel={() => 'Temperature range'}
                                     value={inputData.price}
                                     onChange={handleChange}
-                                    valueLabelDisplay="auto"
-                                />
+                                    valueLabelDisplay="auto" />
                             </Box>
                         </div>
 

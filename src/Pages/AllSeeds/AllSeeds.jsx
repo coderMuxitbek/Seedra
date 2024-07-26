@@ -18,9 +18,8 @@ import Stack from '@mui/material/Stack';
 const AllSeeds = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch();
-    const { filteredData, originalData } = useSelector((state) => state.SeedsSlice);
-    const cartData = useSelector((state) => state.SeedsSlice.cart);
-    const [cartState, setCartState] = useState(cartData)
+    const { filteredData, originalData, cartData } = useSelector((state) => state.SeedsSlice);
+    const [cartState, setCartState] = useState()
 
     const TakeData = () => {
         setCartState(cartData)
@@ -80,25 +79,24 @@ const AllSeeds = () => {
         FilterHandler()
     }, [inputData.seedType, inputData.mainFeatures, inputData.typeOfPlant, inputData.sunlight, inputData.price]);
 
-    const [cartItem, setCartItem] = useState([]);
     const [doneCart, setDoneCart] = useState(false);
 
     const AddCart = (product) => {
         dispatch(putCart({ ...product, qty: +1 }))
+        const existing = cartState.find((item) => item.id === product.id)
 
-        // const existing = cartState.find((item) => item.id === product.id)
-
-        // if (existing) {
-        //     cartState.find((obj) => obj.id === product.id && dispatch(putCart({ ...existing, qty: obj.qty + 1 })))
-
-        //     const newItem = cartItem.map((item) => item.id === product.id ? { ...item, qty: item.qty + 1 } : item)
-        //     setCartItem((prev) => [...prev, newItem])
-        // } else {
-        //     dispatch(putCart({ ...product, qty: 1 }))
-        //     setCartItem((prev) => {
-        //         return [...prev, { ...product, qty: 1 }]
-        //     });
-        // }
+        if (existing) {
+            const newItem = cartItem.map((item) => item.id === product.id ? { ...item, qty: item.qty + 1 } : item)
+            dispatch(putCart(newItem))
+            console.log("exist");
+            // setCartItem((prev) => [...prev, newItem])
+        } else {
+            dispatch(putCart({ ...product, qty: 1 }))
+            // setCartItem((prev) => {
+            //     return [...prev, { ...product, qty: 1 }]
+            // });
+            console.log("no exist");
+        }
 
         TakeData()
     }
@@ -122,7 +120,7 @@ const AllSeeds = () => {
             </div>
 
             <div className="productsTwinBox">
-                <div style={{cursor: 'pointer'}} onClick={() => setBoxPlan((prev) => !prev)} className="OpenFilterBtn">
+                <div style={{ cursor: 'pointer' }} onClick={() => setBoxPlan((prev) => !prev)} className="OpenFilterBtn">
                     <p className='OpenFilterBtn-mention'>FILTERS</p>
                     <p className='OpenFilterBtn-img'><KeyboardArrowDownIcon></KeyboardArrowDownIcon></p>
                 </div>
